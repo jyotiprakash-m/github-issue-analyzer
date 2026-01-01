@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "disable_existing_loggers": false,
+  "formatters": {
+    "default": {
+      "format": "%(asctime)s | %(levelname)s | %(name)s | %(message)s"
+    },
+    "color": {
+      "()": "colorlog.ColoredFormatter",
+      "format": "%(log_color)s%(asctime)s | %(levelname)s | %(name)s | %(message)s",
+      "log_colors": {
+        "DEBUG":    "cyan",
+        "INFO":     "green",
+        "WARNING":  "yellow",
+        "ERROR":    "red",
+        "CRITICAL": "bold_red"
+      }
+    }
+  },
+  "handlers": {
+    "file": {
+      "class": "logging.handlers.RotatingFileHandler",
+      "formatter": "default",
+      "filename": "logs/app.log",
+      "maxBytes": 2097152,
+      "backupCount": 5,
+      "level": "INFO"
+    },
+    "console": {
+      "class": "logging.StreamHandler",
+      "formatter": "color",
+      "level": "INFO"
+    }
+  },
+  "root": {
+    "handlers": ["file", "console"],
+    "level": "INFO"
+  },
+  "loggers": {
+    "uvicorn": {
+      "handlers": ["file", "console"],
+      "level": "INFO",
+      "propagate": false
+    },
+    "uvicorn.error": {
+      "handlers": ["file", "console"],
+      "level": "INFO",
+      "propagate": false
+    },
+    "uvicorn.access": {
+      "handlers": ["file", "console"],
+      "level": "INFO",
+      "propagate": false
+    }
+  }
+}

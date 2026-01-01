@@ -1,0 +1,667 @@
+2026-01-02 01:56:28,935 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 01:56:28,935 | INFO | sqlalchemy.engine.Engine | CREATE TABLE DB(id int)
+2026-01-02 01:56:28,936 | INFO | sqlalchemy.engine.Engine | [generated in 0.00007s] ()
+2026-01-02 01:56:28,936 | INFO | sqlalchemy.engine.Engine | DROP TABLE DB
+2026-01-02 01:56:28,936 | INFO | sqlalchemy.engine.Engine | [generated in 0.00006s] ()
+2026-01-02 01:56:28,937 | INFO | sqlalchemy.engine.Engine | COMMIT
+2026-01-02 01:56:28,937 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 01:56:28,937 | INFO | sqlalchemy.engine.Engine | COMMIT
+2026-01-02 01:58:21,754 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 01:58:21,755 | INFO | sqlalchemy.engine.Engine | COMMIT
+2026-01-02 01:58:45,166 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 01:58:45,166 | INFO | sqlalchemy.engine.Engine | COMMIT
+2026-01-02 02:14:38,488 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 02:14:38,488 | INFO | sqlalchemy.engine.Engine | COMMIT
+2026-01-02 02:27:53,978 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 02:27:53,978 | INFO | sqlalchemy.engine.Engine | PRAGMA main.table_info("issue")
+2026-01-02 02:27:53,978 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 02:27:53,978 | INFO | sqlalchemy.engine.Engine | PRAGMA temp.table_info("issue")
+2026-01-02 02:27:53,978 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 02:27:53,978 | INFO | sqlalchemy.engine.Engine | PRAGMA main.table_info("repo")
+2026-01-02 02:27:53,978 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 02:27:53,978 | INFO | sqlalchemy.engine.Engine | PRAGMA temp.table_info("repo")
+2026-01-02 02:27:53,978 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 02:27:53,978 | INFO | sqlalchemy.engine.Engine | 
+CREATE TABLE repo (
+	id INTEGER NOT NULL, 
+	repo VARCHAR NOT NULL, 
+	issues_fetched INTEGER NOT NULL, 
+	cached_successfully BOOLEAN NOT NULL, 
+	created_at DATETIME NOT NULL, 
+	PRIMARY KEY (id)
+)
+
+
+2026-01-02 02:27:53,978 | INFO | sqlalchemy.engine.Engine | [no key 0.00004s] ()
+2026-01-02 02:27:53,979 | INFO | sqlalchemy.engine.Engine | 
+CREATE TABLE issue (
+	id INTEGER NOT NULL, 
+	repo_id INTEGER NOT NULL, 
+	title VARCHAR NOT NULL, 
+	body VARCHAR NOT NULL, 
+	html_url VARCHAR NOT NULL, 
+	created_at DATETIME NOT NULL, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(repo_id) REFERENCES repo (id)
+)
+
+
+2026-01-02 02:27:53,979 | INFO | sqlalchemy.engine.Engine | [no key 0.00006s] ()
+2026-01-02 02:27:53,980 | INFO | sqlalchemy.engine.Engine | COMMIT
+2026-01-02 02:32:18,144 | INFO | uvicorn.error | Started server process [81131]
+2026-01-02 02:32:18,144 | INFO | uvicorn.error | Waiting for application startup.
+2026-01-02 02:32:18,146 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 02:32:18,146 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 02:32:18,146 | INFO | sqlalchemy.engine.Engine | PRAGMA main.table_info("issue")
+2026-01-02 02:32:18,146 | INFO | sqlalchemy.engine.Engine | PRAGMA main.table_info("issue")
+2026-01-02 02:32:18,146 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 02:32:18,146 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 02:32:18,147 | INFO | sqlalchemy.engine.Engine | PRAGMA main.table_info("repo")
+2026-01-02 02:32:18,147 | INFO | sqlalchemy.engine.Engine | PRAGMA main.table_info("repo")
+2026-01-02 02:32:18,147 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 02:32:18,147 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 02:32:18,147 | INFO | sqlalchemy.engine.Engine | COMMIT
+2026-01-02 02:32:18,147 | INFO | sqlalchemy.engine.Engine | COMMIT
+2026-01-02 02:32:18,147 | INFO | uvicorn.error | Application startup complete.
+2026-01-02 02:32:18,147 | INFO | uvicorn.error | Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2026-01-02 02:34:19,456 | INFO | uvicorn.error | Shutting down
+2026-01-02 02:34:19,560 | INFO | uvicorn.error | Waiting for application shutdown.
+2026-01-02 02:34:19,563 | INFO | uvicorn.error | Application shutdown complete.
+2026-01-02 02:34:19,564 | INFO | uvicorn.error | Finished server process [81131]
+2026-01-02 02:34:21,686 | INFO | uvicorn.error | Started server process [81421]
+2026-01-02 02:34:21,686 | INFO | uvicorn.error | Waiting for application startup.
+2026-01-02 02:34:21,687 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 02:34:21,687 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 02:34:21,687 | INFO | sqlalchemy.engine.Engine | PRAGMA main.table_info("issue")
+2026-01-02 02:34:21,687 | INFO | sqlalchemy.engine.Engine | PRAGMA main.table_info("issue")
+2026-01-02 02:34:21,687 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 02:34:21,687 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 02:34:21,687 | INFO | sqlalchemy.engine.Engine | PRAGMA main.table_info("repo")
+2026-01-02 02:34:21,687 | INFO | sqlalchemy.engine.Engine | PRAGMA main.table_info("repo")
+2026-01-02 02:34:21,687 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 02:34:21,687 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 02:34:21,688 | INFO | sqlalchemy.engine.Engine | COMMIT
+2026-01-02 02:34:21,688 | INFO | sqlalchemy.engine.Engine | COMMIT
+2026-01-02 02:34:21,688 | INFO | uvicorn.error | Application startup complete.
+2026-01-02 02:34:21,688 | INFO | uvicorn.error | Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2026-01-02 02:35:45,498 | INFO | uvicorn.error | Shutting down
+2026-01-02 02:35:45,604 | INFO | uvicorn.error | Waiting for application shutdown.
+2026-01-02 02:35:45,606 | INFO | uvicorn.error | Application shutdown complete.
+2026-01-02 02:35:45,606 | INFO | uvicorn.error | Finished server process [81421]
+2026-01-02 02:36:31,069 | INFO | uvicorn.error | Started server process [82092]
+2026-01-02 02:36:31,070 | INFO | uvicorn.error | Waiting for application startup.
+2026-01-02 02:36:31,073 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 02:36:31,073 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 02:36:31,073 | INFO | sqlalchemy.engine.Engine | PRAGMA main.table_info("issue")
+2026-01-02 02:36:31,073 | INFO | sqlalchemy.engine.Engine | PRAGMA main.table_info("issue")
+2026-01-02 02:36:31,073 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 02:36:31,073 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 02:36:31,073 | INFO | sqlalchemy.engine.Engine | PRAGMA main.table_info("repo")
+2026-01-02 02:36:31,073 | INFO | sqlalchemy.engine.Engine | PRAGMA main.table_info("repo")
+2026-01-02 02:36:31,074 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 02:36:31,074 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 02:36:31,074 | INFO | sqlalchemy.engine.Engine | COMMIT
+2026-01-02 02:36:31,074 | INFO | sqlalchemy.engine.Engine | COMMIT
+2026-01-02 02:36:31,074 | INFO | uvicorn.error | Application startup complete.
+2026-01-02 02:36:31,074 | INFO | uvicorn.error | Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2026-01-02 02:37:37,245 | INFO | uvicorn.access | 127.0.0.1:58991 - "GET / HTTP/1.1" 200
+2026-01-02 02:38:43,690 | INFO | uvicorn.access | 127.0.0.1:59035 - "GET /admin HTTP/1.1" 307
+2026-01-02 02:38:43,735 | INFO | uvicorn.access | 127.0.0.1:59035 - "GET /admin/ HTTP/1.1" 200
+2026-01-02 02:38:43,769 | INFO | uvicorn.access | 127.0.0.1:59035 - "GET /admin/statics/css/tabler.min.css HTTP/1.1" 200
+2026-01-02 02:38:43,770 | INFO | uvicorn.access | 127.0.0.1:59037 - "GET /admin/statics/css/fontawesome.min.css HTTP/1.1" 200
+2026-01-02 02:38:43,771 | INFO | uvicorn.access | 127.0.0.1:59036 - "GET /admin/statics/css/tabler-icons.min.css HTTP/1.1" 200
+2026-01-02 02:38:43,771 | INFO | uvicorn.access | 127.0.0.1:59038 - "GET /admin/statics/css/select2.min.css HTTP/1.1" 200
+2026-01-02 02:38:43,773 | INFO | uvicorn.access | 127.0.0.1:59040 - "GET /admin/statics/css/main.css HTTP/1.1" 200
+2026-01-02 02:38:43,773 | INFO | uvicorn.access | 127.0.0.1:59039 - "GET /admin/statics/css/flatpickr.min.css HTTP/1.1" 200
+2026-01-02 02:38:43,780 | INFO | uvicorn.access | 127.0.0.1:59038 - "GET /admin/statics/js/jquery.min.js HTTP/1.1" 200
+2026-01-02 02:38:43,781 | INFO | uvicorn.access | 127.0.0.1:59039 - "GET /admin/statics/js/popper.min.js HTTP/1.1" 200
+2026-01-02 02:38:43,781 | INFO | uvicorn.access | 127.0.0.1:59040 - "GET /admin/statics/js/tabler.min.js HTTP/1.1" 200
+2026-01-02 02:38:43,782 | INFO | uvicorn.access | 127.0.0.1:59037 - "GET /admin/statics/js/bootstrap.min.js HTTP/1.1" 200
+2026-01-02 02:38:43,782 | INFO | uvicorn.access | 127.0.0.1:59036 - "GET /admin/statics/js/select2.full.min.js HTTP/1.1" 200
+2026-01-02 02:38:43,787 | INFO | uvicorn.access | 127.0.0.1:59035 - "GET /admin/statics/js/main.js HTTP/1.1" 200
+2026-01-02 02:38:43,788 | INFO | uvicorn.access | 127.0.0.1:59039 - "GET /admin/statics/js/flatpickr.min.js HTTP/1.1" 200
+2026-01-02 02:38:59,620 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 02:38:59,620 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 02:38:59,626 | INFO | sqlalchemy.engine.Engine | SELECT count(*) AS count_1 
+FROM (SELECT repo.id AS id, repo.repo AS repo, repo.issues_fetched AS issues_fetched, repo.cached_successfully AS cached_successfully, repo.created_at AS created_at 
+FROM repo ORDER BY repo.id ASC) AS anon_1
+2026-01-02 02:38:59,626 | INFO | sqlalchemy.engine.Engine | SELECT count(*) AS count_1 
+FROM (SELECT repo.id AS id, repo.repo AS repo, repo.issues_fetched AS issues_fetched, repo.cached_successfully AS cached_successfully, repo.created_at AS created_at 
+FROM repo ORDER BY repo.id ASC) AS anon_1
+2026-01-02 02:38:59,626 | INFO | sqlalchemy.engine.Engine | [generated in 0.00057s] ()
+2026-01-02 02:38:59,626 | INFO | sqlalchemy.engine.Engine | [generated in 0.00057s] ()
+2026-01-02 02:38:59,631 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 02:38:59,631 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 02:38:59,631 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 02:38:59,631 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 02:38:59,632 | INFO | sqlalchemy.engine.Engine | SELECT repo.id, repo.repo, repo.issues_fetched, repo.cached_successfully, repo.created_at 
+FROM repo ORDER BY repo.id ASC
+ LIMIT ? OFFSET ?
+2026-01-02 02:38:59,632 | INFO | sqlalchemy.engine.Engine | SELECT repo.id, repo.repo, repo.issues_fetched, repo.cached_successfully, repo.created_at 
+FROM repo ORDER BY repo.id ASC
+ LIMIT ? OFFSET ?
+2026-01-02 02:38:59,632 | INFO | sqlalchemy.engine.Engine | [generated in 0.00016s] (10, 0)
+2026-01-02 02:38:59,632 | INFO | sqlalchemy.engine.Engine | [generated in 0.00016s] (10, 0)
+2026-01-02 02:38:59,632 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 02:38:59,632 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 02:38:59,661 | INFO | uvicorn.access | 127.0.0.1:59053 - "GET /admin/repo/list HTTP/1.1" 200
+2026-01-02 02:38:59,720 | INFO | uvicorn.access | 127.0.0.1:59053 - "GET /admin/statics/webfonts/fa-solid-900.woff2 HTTP/1.1" 2002026-01-02 02:49:44,935 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 02:49:44,935 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 02:49:44,938 | INFO | sqlalchemy.engine.Engine | SELECT count(*) AS count_1 
+FROM (SELECT repo.id AS id, repo.repo AS repo, repo.issues_fetched AS issues_fetched, repo.cached_successfully AS cached_successfully, repo.created_at AS created_at 
+FROM repo ORDER BY repo.id ASC) AS anon_1
+2026-01-02 02:49:44,938 | INFO | sqlalchemy.engine.Engine | SELECT count(*) AS count_1 
+FROM (SELECT repo.id AS id, repo.repo AS repo, repo.issues_fetched AS issues_fetched, repo.cached_successfully AS cached_successfully, repo.created_at AS created_at 
+FROM repo ORDER BY repo.id ASC) AS anon_1
+2026-01-02 02:49:44,939 | INFO | sqlalchemy.engine.Engine | [generated in 0.00042s] ()
+2026-01-02 02:49:44,939 | INFO | sqlalchemy.engine.Engine | [generated in 0.00042s] ()
+2026-01-02 02:49:44,944 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 02:49:44,944 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 02:49:44,944 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 02:49:44,944 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 02:49:44,945 | INFO | sqlalchemy.engine.Engine | SELECT repo.id, repo.repo, repo.issues_fetched, repo.cached_successfully, repo.created_at 
+FROM repo ORDER BY repo.id ASC
+ LIMIT ? OFFSET ?
+2026-01-02 02:49:44,945 | INFO | sqlalchemy.engine.Engine | SELECT repo.id, repo.repo, repo.issues_fetched, repo.cached_successfully, repo.created_at 
+FROM repo ORDER BY repo.id ASC
+ LIMIT ? OFFSET ?
+2026-01-02 02:49:44,945 | INFO | sqlalchemy.engine.Engine | [generated in 0.00011s] (10, 0)
+2026-01-02 02:49:44,945 | INFO | sqlalchemy.engine.Engine | [generated in 0.00011s] (10, 0)
+2026-01-02 02:49:44,945 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 02:49:44,945 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 02:49:44,948 | INFO | uvicorn.access | 127.0.0.1:59501 - "GET /admin/repo/list HTTP/1.1" 200
+2026-01-02 03:11:19,229 | INFO | uvicorn.error | Shutting down
+2026-01-02 03:11:19,351 | INFO | uvicorn.error | Waiting for application shutdown.
+2026-01-02 03:11:19,356 | INFO | uvicorn.error | Application shutdown complete.
+2026-01-02 03:11:19,358 | INFO | uvicorn.error | Finished server process [83745]
+2026-01-02 03:21:50,493 | INFO | uvicorn.error | Started server process [87514]
+2026-01-02 03:21:50,494 | INFO | uvicorn.error | Waiting for application startup.
+2026-01-02 03:21:50,497 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:21:50,497 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:21:50,498 | INFO | sqlalchemy.engine.Engine | CREATE TABLE DB(id int)
+2026-01-02 03:21:50,498 | INFO | sqlalchemy.engine.Engine | CREATE TABLE DB(id int)
+2026-01-02 03:21:50,498 | INFO | sqlalchemy.engine.Engine | [generated in 0.00010s] ()
+2026-01-02 03:21:50,498 | INFO | sqlalchemy.engine.Engine | [generated in 0.00010s] ()
+2026-01-02 03:21:50,499 | INFO | sqlalchemy.engine.Engine | DROP TABLE DB
+2026-01-02 03:21:50,499 | INFO | sqlalchemy.engine.Engine | DROP TABLE DB
+2026-01-02 03:21:50,499 | INFO | sqlalchemy.engine.Engine | [generated in 0.00008s] ()
+2026-01-02 03:21:50,499 | INFO | sqlalchemy.engine.Engine | [generated in 0.00008s] ()
+2026-01-02 03:21:50,499 | INFO | sqlalchemy.engine.Engine | COMMIT
+2026-01-02 03:21:50,499 | INFO | sqlalchemy.engine.Engine | COMMIT
+2026-01-02 03:21:50,499 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:21:50,499 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:21:50,499 | INFO | sqlalchemy.engine.Engine | PRAGMA main.table_info("issue")
+2026-01-02 03:21:50,499 | INFO | sqlalchemy.engine.Engine | PRAGMA main.table_info("issue")
+2026-01-02 03:21:50,500 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 03:21:50,500 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 03:21:50,500 | INFO | sqlalchemy.engine.Engine | PRAGMA temp.table_info("issue")
+2026-01-02 03:21:50,500 | INFO | sqlalchemy.engine.Engine | PRAGMA temp.table_info("issue")
+2026-01-02 03:21:50,500 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 03:21:50,500 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 03:21:50,500 | INFO | sqlalchemy.engine.Engine | PRAGMA main.table_info("repo")
+2026-01-02 03:21:50,500 | INFO | sqlalchemy.engine.Engine | PRAGMA main.table_info("repo")
+2026-01-02 03:21:50,500 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 03:21:50,500 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 03:21:50,500 | INFO | sqlalchemy.engine.Engine | PRAGMA temp.table_info("repo")
+2026-01-02 03:21:50,500 | INFO | sqlalchemy.engine.Engine | PRAGMA temp.table_info("repo")
+2026-01-02 03:21:50,500 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 03:21:50,500 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 03:21:50,500 | INFO | sqlalchemy.engine.Engine | 
+CREATE TABLE repo (
+	id INTEGER NOT NULL, 
+	repo VARCHAR NOT NULL, 
+	issues_fetched INTEGER NOT NULL, 
+	cached_successfully BOOLEAN NOT NULL, 
+	created_at DATETIME NOT NULL, 
+	PRIMARY KEY (id), 
+	UNIQUE (repo)
+)
+
+
+2026-01-02 03:21:50,500 | INFO | sqlalchemy.engine.Engine | 
+CREATE TABLE repo (
+	id INTEGER NOT NULL, 
+	repo VARCHAR NOT NULL, 
+	issues_fetched INTEGER NOT NULL, 
+	cached_successfully BOOLEAN NOT NULL, 
+	created_at DATETIME NOT NULL, 
+	PRIMARY KEY (id), 
+	UNIQUE (repo)
+)
+
+
+2026-01-02 03:21:50,501 | INFO | sqlalchemy.engine.Engine | [no key 0.00008s] ()
+2026-01-02 03:21:50,501 | INFO | sqlalchemy.engine.Engine | [no key 0.00008s] ()
+2026-01-02 03:21:50,501 | INFO | sqlalchemy.engine.Engine | 
+CREATE TABLE issue (
+	id INTEGER NOT NULL, 
+	repo_id INTEGER NOT NULL, 
+	title VARCHAR NOT NULL, 
+	body VARCHAR NOT NULL, 
+	html_url VARCHAR NOT NULL, 
+	created_at DATETIME NOT NULL, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(repo_id) REFERENCES repo (id)
+)
+
+
+2026-01-02 03:21:50,501 | INFO | sqlalchemy.engine.Engine | 
+CREATE TABLE issue (
+	id INTEGER NOT NULL, 
+	repo_id INTEGER NOT NULL, 
+	title VARCHAR NOT NULL, 
+	body VARCHAR NOT NULL, 
+	html_url VARCHAR NOT NULL, 
+	created_at DATETIME NOT NULL, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(repo_id) REFERENCES repo (id)
+)
+
+
+2026-01-02 03:21:50,501 | INFO | sqlalchemy.engine.Engine | [no key 0.00009s] ()
+2026-01-02 03:21:50,501 | INFO | sqlalchemy.engine.Engine | [no key 0.00009s] ()
+2026-01-02 03:21:50,502 | INFO | sqlalchemy.engine.Engine | COMMIT
+2026-01-02 03:21:50,502 | INFO | sqlalchemy.engine.Engine | COMMIT
+2026-01-02 03:21:50,502 | INFO | uvicorn.error | Application startup complete.
+2026-01-02 03:21:50,502 | INFO | uvicorn.error | Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2026-01-02 03:21:56,223 | INFO | uvicorn.access | 127.0.0.1:61877 - "GET / HTTP/1.1" 200
+2026-01-02 03:23:20,024 | INFO | uvicorn.error | Shutting down
+2026-01-02 03:23:20,134 | INFO | uvicorn.error | Waiting for application shutdown.
+2026-01-02 03:23:20,136 | INFO | uvicorn.error | Application shutdown complete.
+2026-01-02 03:23:20,137 | INFO | uvicorn.error | Finished server process [87514]
+2026-01-02 03:23:55,110 | INFO | uvicorn.error | Started server process [87857]
+2026-01-02 03:23:55,111 | INFO | uvicorn.error | Waiting for application startup.
+2026-01-02 03:23:55,114 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:23:55,114 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:23:55,114 | INFO | sqlalchemy.engine.Engine | PRAGMA main.table_info("issue")
+2026-01-02 03:23:55,114 | INFO | sqlalchemy.engine.Engine | PRAGMA main.table_info("issue")
+2026-01-02 03:23:55,114 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 03:23:55,114 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 03:23:55,115 | INFO | sqlalchemy.engine.Engine | PRAGMA main.table_info("repo")
+2026-01-02 03:23:55,115 | INFO | sqlalchemy.engine.Engine | PRAGMA main.table_info("repo")
+2026-01-02 03:23:55,115 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 03:23:55,115 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 03:23:55,115 | INFO | sqlalchemy.engine.Engine | COMMIT
+2026-01-02 03:23:55,115 | INFO | sqlalchemy.engine.Engine | COMMIT
+2026-01-02 03:23:55,115 | INFO | uvicorn.error | Application startup complete.
+2026-01-02 03:23:55,115 | INFO | uvicorn.error | Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2026-01-02 03:24:13,331 | INFO | uvicorn.error | Shutting down
+2026-01-02 03:24:13,436 | INFO | uvicorn.error | Waiting for application shutdown.
+2026-01-02 03:24:13,438 | INFO | uvicorn.error | Application shutdown complete.
+2026-01-02 03:24:13,439 | INFO | uvicorn.error | Finished server process [87857]
+2026-01-02 03:25:47,061 | INFO | uvicorn.error | Started server process [88143]
+2026-01-02 03:25:47,061 | INFO | uvicorn.error | Waiting for application startup.
+2026-01-02 03:25:47,066 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:25:47,066 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:25:47,066 | INFO | sqlalchemy.engine.Engine | PRAGMA main.table_info("issue")
+2026-01-02 03:25:47,066 | INFO | sqlalchemy.engine.Engine | PRAGMA main.table_info("issue")
+2026-01-02 03:25:47,066 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 03:25:47,066 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 03:25:47,068 | INFO | sqlalchemy.engine.Engine | PRAGMA main.table_info("repo")
+2026-01-02 03:25:47,068 | INFO | sqlalchemy.engine.Engine | PRAGMA main.table_info("repo")
+2026-01-02 03:25:47,068 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 03:25:47,068 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 03:25:47,068 | INFO | sqlalchemy.engine.Engine | COMMIT
+2026-01-02 03:25:47,068 | INFO | sqlalchemy.engine.Engine | COMMIT
+2026-01-02 03:25:47,068 | INFO | uvicorn.error | Application startup complete.
+2026-01-02 03:25:47,069 | INFO | uvicorn.error | Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2026-01-02 03:25:51,657 | INFO | uvicorn.access | 127.0.0.1:62959 - "GET / HTTP/1.1" 200
+2026-01-02 03:25:58,313 | INFO | uvicorn.access | 127.0.0.1:62996 - "GET /docs HTTP/1.1" 200
+2026-01-02 03:25:58,428 | INFO | uvicorn.access | 127.0.0.1:62996 - "GET /openapi.json HTTP/1.1" 200
+2026-01-02 03:26:42,585 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:26:42,585 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:26:42,590 | INFO | sqlalchemy.engine.Engine | SELECT repo.id, repo.repo, repo.issues_fetched, repo.cached_successfully, repo.created_at 
+FROM repo 
+WHERE repo.repo = ?
+2026-01-02 03:26:42,590 | INFO | sqlalchemy.engine.Engine | SELECT repo.id, repo.repo, repo.issues_fetched, repo.cached_successfully, repo.created_at 
+FROM repo 
+WHERE repo.repo = ?
+2026-01-02 03:26:42,591 | INFO | sqlalchemy.engine.Engine | [generated in 0.00084s] ('creativetimofficial/notus-nextjs',)
+2026-01-02 03:26:42,591 | INFO | sqlalchemy.engine.Engine | [generated in 0.00084s] ('creativetimofficial/notus-nextjs',)
+2026-01-02 03:26:42,601 | INFO | sqlalchemy.engine.Engine | INSERT INTO repo (repo, issues_fetched, cached_successfully, created_at) VALUES (?, ?, ?, ?)
+2026-01-02 03:26:42,601 | INFO | sqlalchemy.engine.Engine | INSERT INTO repo (repo, issues_fetched, cached_successfully, created_at) VALUES (?, ?, ?, ?)
+2026-01-02 03:26:42,601 | INFO | sqlalchemy.engine.Engine | [generated in 0.00022s] ('creativetimofficial/notus-nextjs', 0, 0, '2026-01-01 21:56:42.597515')
+2026-01-02 03:26:42,601 | INFO | sqlalchemy.engine.Engine | [generated in 0.00022s] ('creativetimofficial/notus-nextjs', 0, 0, '2026-01-01 21:56:42.597515')
+2026-01-02 03:26:42,602 | INFO | sqlalchemy.engine.Engine | COMMIT
+2026-01-02 03:26:42,602 | INFO | sqlalchemy.engine.Engine | COMMIT
+2026-01-02 03:26:42,603 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:26:42,603 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:26:42,604 | INFO | sqlalchemy.engine.Engine | SELECT repo.id, repo.repo, repo.issues_fetched, repo.cached_successfully, repo.created_at 
+FROM repo 
+WHERE repo.id = ?
+2026-01-02 03:26:42,604 | INFO | sqlalchemy.engine.Engine | SELECT repo.id, repo.repo, repo.issues_fetched, repo.cached_successfully, repo.created_at 
+FROM repo 
+WHERE repo.id = ?
+2026-01-02 03:26:42,604 | INFO | sqlalchemy.engine.Engine | [generated in 0.00010s] (1,)
+2026-01-02 03:26:42,604 | INFO | sqlalchemy.engine.Engine | [generated in 0.00010s] (1,)
+2026-01-02 03:26:42,607 | INFO | sqlalchemy.engine.Engine | UPDATE repo SET issues_fetched=?, cached_successfully=? WHERE repo.id = ?
+2026-01-02 03:26:42,607 | INFO | sqlalchemy.engine.Engine | UPDATE repo SET issues_fetched=?, cached_successfully=? WHERE repo.id = ?
+2026-01-02 03:26:42,607 | INFO | sqlalchemy.engine.Engine | [generated in 0.00012s] (4, 1, 1)
+2026-01-02 03:26:42,607 | INFO | sqlalchemy.engine.Engine | [generated in 0.00012s] (4, 1, 1)
+2026-01-02 03:26:42,608 | INFO | sqlalchemy.engine.Engine | INSERT INTO issue (id, repo_id, title, body, html_url, created_at) VALUES (?, ?, ?, ?, ?, ?)
+2026-01-02 03:26:42,608 | INFO | sqlalchemy.engine.Engine | INSERT INTO issue (id, repo_id, title, body, html_url, created_at) VALUES (?, ?, ?, ?, ?, ?)
+2026-01-02 03:26:42,608 | INFO | sqlalchemy.engine.Engine | [generated in 0.00015s] [(1469363780, 1, '[Bug] npm run dev error : ERR_PACKAGE_PATH_NOT_EXPORTED', '### Version\r\nnotus-nextjs@1.1.0\r\n### Reproduction link\r\nhttps://github.com/creativetimofficial/notus-nextjs\r\n### Operating System\r\nmacOS Mo ... (1740 characters truncated) ... beb6-c526c1dd2169.png">\r\n\r\n\r\n---\r\n### Solution\r\n\r\n### Additional comments\r\n\r\n<!-- generated by creative-tim-issues. DO NOT REMOVE -->', 'https://github.com/creativetimofficial/notus-nextjs/issues/26', '2022-11-30 10:02:26.000000'), (1137089979, 1, '[Bug] @next/postcss', "### Version\r\nmain\r\n### Reproduction link\r\n-\r\n### Operating System\r\nWindows\r\n### Device\r\nROG\r\n### Browser & Version\r\nChrome\r\n### S ... (177 characters truncated) ... r like this, what happened?\r\n\r\n---\r\n### Solution\r\n\r\n### Additional comments\r\n\r\n<!-- generated by creative-tim-issues. DO NOT REMOVE -->", 'https://github.com/creativetimofficial/notus-nextjs/issues/22', '2022-02-14 10:26:14.000000'), (1058777341, 1, 'TableDropdown.js is a copy of NotificationDropdown.js', '### Version\r\n1.1.0\r\n### Reproduction link\r\nhttps://github.com/creativetimofficial/notus-nextjs/blob/main/components/Dropdowns/TableDropdown.js\ ... (451 characters truncated) ... ting a NotificationDropdown\r\n\r\n---\r\n### Solution\r\n\r\n### Additional comments\r\n\r\n<!-- generated by creative-tim-issues. DO NOT REMOVE -->', 'https://github.com/creativetimofficial/notus-nextjs/issues/18', '2021-11-19 17:52:29.000000'), (1031032892, 1, '[Feature Request] Add Ability to Close Popovers on Esc Key/Click Off Events', '### What is your enhancement?\r\nI would like to have Dropdowns/Popovers close when pressing the Escape key or when clicking off/away from the component. Currently, they stay until you click the anchor point again.\r\n<!-- generated by creative-tim-issues. DO NOT REMOVE -->', 'https://github.com/creativetimofficial/notus-nextjs/issues/16', '2021-10-20 06:36:46.000000')]
+2026-01-02 03:26:42,608 | INFO | sqlalchemy.engine.Engine | [generated in 0.00015s] [(1469363780, 1, '[Bug] npm run dev error : ERR_PACKAGE_PATH_NOT_EXPORTED', '### Version\r\nnotus-nextjs@1.1.0\r\n### Reproduction link\r\nhttps://github.com/creativetimofficial/notus-nextjs\r\n### Operating System\r\nmacOS Mo ... (1740 characters truncated) ... beb6-c526c1dd2169.png">\r\n\r\n\r\n---\r\n### Solution\r\n\r\n### Additional comments\r\n\r\n<!-- generated by creative-tim-issues. DO NOT REMOVE -->', 'https://github.com/creativetimofficial/notus-nextjs/issues/26', '2022-11-30 10:02:26.000000'), (1137089979, 1, '[Bug] @next/postcss', "### Version\r\nmain\r\n### Reproduction link\r\n-\r\n### Operating System\r\nWindows\r\n### Device\r\nROG\r\n### Browser & Version\r\nChrome\r\n### S ... (177 characters truncated) ... r like this, what happened?\r\n\r\n---\r\n### Solution\r\n\r\n### Additional comments\r\n\r\n<!-- generated by creative-tim-issues. DO NOT REMOVE -->", 'https://github.com/creativetimofficial/notus-nextjs/issues/22', '2022-02-14 10:26:14.000000'), (1058777341, 1, 'TableDropdown.js is a copy of NotificationDropdown.js', '### Version\r\n1.1.0\r\n### Reproduction link\r\nhttps://github.com/creativetimofficial/notus-nextjs/blob/main/components/Dropdowns/TableDropdown.js\ ... (451 characters truncated) ... ting a NotificationDropdown\r\n\r\n---\r\n### Solution\r\n\r\n### Additional comments\r\n\r\n<!-- generated by creative-tim-issues. DO NOT REMOVE -->', 'https://github.com/creativetimofficial/notus-nextjs/issues/18', '2021-11-19 17:52:29.000000'), (1031032892, 1, '[Feature Request] Add Ability to Close Popovers on Esc Key/Click Off Events', '### What is your enhancement?\r\nI would like to have Dropdowns/Popovers close when pressing the Escape key or when clicking off/away from the component. Currently, they stay until you click the anchor point again.\r\n<!-- generated by creative-tim-issues. DO NOT REMOVE -->', 'https://github.com/creativetimofficial/notus-nextjs/issues/16', '2021-10-20 06:36:46.000000')]
+2026-01-02 03:26:42,608 | INFO | sqlalchemy.engine.Engine | COMMIT
+2026-01-02 03:26:42,608 | INFO | sqlalchemy.engine.Engine | COMMIT
+2026-01-02 03:26:42,609 | INFO | app_logger.scan_service | Fetched and cached 4 issues for creativetimofficial/notus-nextjs
+2026-01-02 03:26:42,609 | INFO | app_logger.scan_service | Fetched and cached 4 issues for creativetimofficial/notus-nextjs
+2026-01-02 03:26:42,610 | INFO | uvicorn.access | 127.0.0.1:63231 - "POST /scan HTTP/1.1" 200
+2026-01-02 03:26:54,132 | ERROR | app_logger.scan_service | Repository not found: creativetimofficial/notus-nextjs1
+2026-01-02 03:26:54,132 | ERROR | app_logger.scan_service | Repository not found: creativetimofficial/notus-nextjs1
+2026-01-02 03:26:54,136 | INFO | uvicorn.access | 127.0.0.1:63292 - "POST /scan HTTP/1.1" 400
+2026-01-02 03:27:23,740 | INFO | uvicorn.access | 127.0.0.1:63437 - "GET /admin HTTP/1.1" 307
+2026-01-02 03:27:23,786 | INFO | uvicorn.access | 127.0.0.1:63437 - "GET /admin/ HTTP/1.1" 200
+2026-01-02 03:27:25,282 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:27:25,282 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:27:25,286 | INFO | sqlalchemy.engine.Engine | SELECT count(*) AS count_1 
+FROM (SELECT repo.id AS id, repo.repo AS repo, repo.issues_fetched AS issues_fetched, repo.cached_successfully AS cached_successfully, repo.created_at AS created_at 
+FROM repo ORDER BY repo.id ASC) AS anon_1
+2026-01-02 03:27:25,286 | INFO | sqlalchemy.engine.Engine | SELECT count(*) AS count_1 
+FROM (SELECT repo.id AS id, repo.repo AS repo, repo.issues_fetched AS issues_fetched, repo.cached_successfully AS cached_successfully, repo.created_at AS created_at 
+FROM repo ORDER BY repo.id ASC) AS anon_1
+2026-01-02 03:27:25,287 | INFO | sqlalchemy.engine.Engine | [generated in 0.00069s] ()
+2026-01-02 03:27:25,287 | INFO | sqlalchemy.engine.Engine | [generated in 0.00069s] ()
+2026-01-02 03:27:25,291 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 03:27:25,291 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 03:27:25,292 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:27:25,292 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:27:25,293 | INFO | sqlalchemy.engine.Engine | SELECT repo.id, repo.repo, repo.issues_fetched, repo.cached_successfully, repo.created_at 
+FROM repo ORDER BY repo.id ASC
+ LIMIT ? OFFSET ?
+2026-01-02 03:27:25,293 | INFO | sqlalchemy.engine.Engine | SELECT repo.id, repo.repo, repo.issues_fetched, repo.cached_successfully, repo.created_at 
+FROM repo ORDER BY repo.id ASC
+ LIMIT ? OFFSET ?
+2026-01-02 03:27:25,293 | INFO | sqlalchemy.engine.Engine | [generated in 0.00013s] (10, 0)
+2026-01-02 03:27:25,293 | INFO | sqlalchemy.engine.Engine | [generated in 0.00013s] (10, 0)
+2026-01-02 03:27:25,293 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 03:27:25,293 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 03:27:25,318 | INFO | uvicorn.access | 127.0.0.1:63444 - "GET /admin/repo/list HTTP/1.1" 200
+2026-01-02 03:27:30,126 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:27:30,126 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:27:30,128 | INFO | sqlalchemy.engine.Engine | SELECT count(*) AS count_1 
+FROM (SELECT issue.id AS id, issue.repo_id AS repo_id, issue.title AS title, issue.body AS body, issue.html_url AS html_url, issue.created_at AS created_at 
+FROM issue ORDER BY issue.id ASC) AS anon_1
+2026-01-02 03:27:30,128 | INFO | sqlalchemy.engine.Engine | SELECT count(*) AS count_1 
+FROM (SELECT issue.id AS id, issue.repo_id AS repo_id, issue.title AS title, issue.body AS body, issue.html_url AS html_url, issue.created_at AS created_at 
+FROM issue ORDER BY issue.id ASC) AS anon_1
+2026-01-02 03:27:30,128 | INFO | sqlalchemy.engine.Engine | [generated in 0.00037s] ()
+2026-01-02 03:27:30,128 | INFO | sqlalchemy.engine.Engine | [generated in 0.00037s] ()
+2026-01-02 03:27:30,129 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 03:27:30,129 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 03:27:30,130 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:27:30,130 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:27:30,131 | INFO | sqlalchemy.engine.Engine | SELECT issue.id, issue.repo_id, issue.title, issue.body, issue.html_url, issue.created_at 
+FROM issue ORDER BY issue.id ASC
+ LIMIT ? OFFSET ?
+2026-01-02 03:27:30,131 | INFO | sqlalchemy.engine.Engine | SELECT issue.id, issue.repo_id, issue.title, issue.body, issue.html_url, issue.created_at 
+FROM issue ORDER BY issue.id ASC
+ LIMIT ? OFFSET ?
+2026-01-02 03:27:30,132 | INFO | sqlalchemy.engine.Engine | [generated in 0.00080s] (10, 0)
+2026-01-02 03:27:30,132 | INFO | sqlalchemy.engine.Engine | [generated in 0.00080s] (10, 0)
+2026-01-02 03:27:30,133 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 03:27:30,133 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 03:27:30,141 | INFO | uvicorn.access | 127.0.0.1:63471 - "GET /admin/issue/list HTTP/1.1" 200
+2026-01-02 03:27:58,772 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:27:58,772 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:27:58,775 | INFO | sqlalchemy.engine.Engine | SELECT repo.id, repo.repo, repo.issues_fetched, repo.cached_successfully, repo.created_at 
+FROM repo 
+WHERE repo.repo = ?
+2026-01-02 03:27:58,775 | INFO | sqlalchemy.engine.Engine | SELECT repo.id, repo.repo, repo.issues_fetched, repo.cached_successfully, repo.created_at 
+FROM repo 
+WHERE repo.repo = ?
+2026-01-02 03:27:58,775 | INFO | sqlalchemy.engine.Engine | [cached since 76.19s ago] ('creativetimofficial/notus-nextjs',)
+2026-01-02 03:27:58,775 | INFO | sqlalchemy.engine.Engine | [cached since 76.19s ago] ('creativetimofficial/notus-nextjs',)
+2026-01-02 03:27:58,779 | INFO | sqlalchemy.engine.Engine | DELETE FROM issue WHERE issue.repo_id = ?
+2026-01-02 03:27:58,779 | INFO | sqlalchemy.engine.Engine | DELETE FROM issue WHERE issue.repo_id = ?
+2026-01-02 03:27:58,779 | INFO | sqlalchemy.engine.Engine | [generated in 0.00027s] (1,)
+2026-01-02 03:27:58,779 | INFO | sqlalchemy.engine.Engine | [generated in 0.00027s] (1,)
+2026-01-02 03:27:58,783 | INFO | sqlalchemy.engine.Engine | INSERT INTO issue (id, repo_id, title, body, html_url, created_at) VALUES (?, ?, ?, ?, ?, ?)
+2026-01-02 03:27:58,783 | INFO | sqlalchemy.engine.Engine | INSERT INTO issue (id, repo_id, title, body, html_url, created_at) VALUES (?, ?, ?, ?, ?, ?)
+2026-01-02 03:27:58,783 | INFO | sqlalchemy.engine.Engine | [cached since 76.18s ago] [(1469363780, 1, '[Bug] npm run dev error : ERR_PACKAGE_PATH_NOT_EXPORTED', '### Version\r\nnotus-nextjs@1.1.0\r\n### Reproduction link\r\nhttps://github.com/creativetimofficial/notus-nextjs\r\n### Operating System\r\nmacOS Mo ... (1740 characters truncated) ... beb6-c526c1dd2169.png">\r\n\r\n\r\n---\r\n### Solution\r\n\r\n### Additional comments\r\n\r\n<!-- generated by creative-tim-issues. DO NOT REMOVE -->', 'https://github.com/creativetimofficial/notus-nextjs/issues/26', '2022-11-30 10:02:26.000000'), (1137089979, 1, '[Bug] @next/postcss', "### Version\r\nmain\r\n### Reproduction link\r\n-\r\n### Operating System\r\nWindows\r\n### Device\r\nROG\r\n### Browser & Version\r\nChrome\r\n### S ... (177 characters truncated) ... r like this, what happened?\r\n\r\n---\r\n### Solution\r\n\r\n### Additional comments\r\n\r\n<!-- generated by creative-tim-issues. DO NOT REMOVE -->", 'https://github.com/creativetimofficial/notus-nextjs/issues/22', '2022-02-14 10:26:14.000000'), (1058777341, 1, 'TableDropdown.js is a copy of NotificationDropdown.js', '### Version\r\n1.1.0\r\n### Reproduction link\r\nhttps://github.com/creativetimofficial/notus-nextjs/blob/main/components/Dropdowns/TableDropdown.js\ ... (451 characters truncated) ... ting a NotificationDropdown\r\n\r\n---\r\n### Solution\r\n\r\n### Additional comments\r\n\r\n<!-- generated by creative-tim-issues. DO NOT REMOVE -->', 'https://github.com/creativetimofficial/notus-nextjs/issues/18', '2021-11-19 17:52:29.000000'), (1031032892, 1, '[Feature Request] Add Ability to Close Popovers on Esc Key/Click Off Events', '### What is your enhancement?\r\nI would like to have Dropdowns/Popovers close when pressing the Escape key or when clicking off/away from the component. Currently, they stay until you click the anchor point again.\r\n<!-- generated by creative-tim-issues. DO NOT REMOVE -->', 'https://github.com/creativetimofficial/notus-nextjs/issues/16', '2021-10-20 06:36:46.000000')]
+2026-01-02 03:27:58,783 | INFO | sqlalchemy.engine.Engine | [cached since 76.18s ago] [(1469363780, 1, '[Bug] npm run dev error : ERR_PACKAGE_PATH_NOT_EXPORTED', '### Version\r\nnotus-nextjs@1.1.0\r\n### Reproduction link\r\nhttps://github.com/creativetimofficial/notus-nextjs\r\n### Operating System\r\nmacOS Mo ... (1740 characters truncated) ... beb6-c526c1dd2169.png">\r\n\r\n\r\n---\r\n### Solution\r\n\r\n### Additional comments\r\n\r\n<!-- generated by creative-tim-issues. DO NOT REMOVE -->', 'https://github.com/creativetimofficial/notus-nextjs/issues/26', '2022-11-30 10:02:26.000000'), (1137089979, 1, '[Bug] @next/postcss', "### Version\r\nmain\r\n### Reproduction link\r\n-\r\n### Operating System\r\nWindows\r\n### Device\r\nROG\r\n### Browser & Version\r\nChrome\r\n### S ... (177 characters truncated) ... r like this, what happened?\r\n\r\n---\r\n### Solution\r\n\r\n### Additional comments\r\n\r\n<!-- generated by creative-tim-issues. DO NOT REMOVE -->", 'https://github.com/creativetimofficial/notus-nextjs/issues/22', '2022-02-14 10:26:14.000000'), (1058777341, 1, 'TableDropdown.js is a copy of NotificationDropdown.js', '### Version\r\n1.1.0\r\n### Reproduction link\r\nhttps://github.com/creativetimofficial/notus-nextjs/blob/main/components/Dropdowns/TableDropdown.js\ ... (451 characters truncated) ... ting a NotificationDropdown\r\n\r\n---\r\n### Solution\r\n\r\n### Additional comments\r\n\r\n<!-- generated by creative-tim-issues. DO NOT REMOVE -->', 'https://github.com/creativetimofficial/notus-nextjs/issues/18', '2021-11-19 17:52:29.000000'), (1031032892, 1, '[Feature Request] Add Ability to Close Popovers on Esc Key/Click Off Events', '### What is your enhancement?\r\nI would like to have Dropdowns/Popovers close when pressing the Escape key or when clicking off/away from the component. Currently, they stay until you click the anchor point again.\r\n<!-- generated by creative-tim-issues. DO NOT REMOVE -->', 'https://github.com/creativetimofficial/notus-nextjs/issues/16', '2021-10-20 06:36:46.000000')]
+2026-01-02 03:27:58,784 | INFO | sqlalchemy.engine.Engine | COMMIT
+2026-01-02 03:27:58,784 | INFO | sqlalchemy.engine.Engine | COMMIT
+2026-01-02 03:27:58,785 | INFO | app_logger.scan_service | Fetched and cached 4 issues for creativetimofficial/notus-nextjs
+2026-01-02 03:27:58,785 | INFO | app_logger.scan_service | Fetched and cached 4 issues for creativetimofficial/notus-nextjs
+2026-01-02 03:27:58,787 | INFO | uvicorn.access | 127.0.0.1:63618 - "POST /scan HTTP/1.1" 200
+2026-01-02 03:28:11,671 | INFO | uvicorn.access | 127.0.0.1:63694 - "GET /docs HTTP/1.1" 401
+2026-01-02 03:28:15,055 | INFO | uvicorn.access | 127.0.0.1:63720 - "GET /docs HTTP/1.1" 401
+2026-01-02 03:28:15,247 | INFO | uvicorn.access | 127.0.0.1:63720 - "GET /favicon.ico HTTP/1.1" 404
+2026-01-02 03:28:26,435 | INFO | uvicorn.access | 127.0.0.1:63778 - "GET /admin HTTP/1.1" 307
+2026-01-02 03:28:26,451 | INFO | uvicorn.access | 127.0.0.1:63778 - "GET /admin/ HTTP/1.1" 200
+2026-01-02 03:28:28,247 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:28:28,247 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:28:28,248 | INFO | sqlalchemy.engine.Engine | SELECT count(*) AS count_1 
+FROM (SELECT repo.id AS id, repo.repo AS repo, repo.issues_fetched AS issues_fetched, repo.cached_successfully AS cached_successfully, repo.created_at AS created_at 
+FROM repo ORDER BY repo.id ASC) AS anon_1
+2026-01-02 03:28:28,248 | INFO | sqlalchemy.engine.Engine | SELECT count(*) AS count_1 
+FROM (SELECT repo.id AS id, repo.repo AS repo, repo.issues_fetched AS issues_fetched, repo.cached_successfully AS cached_successfully, repo.created_at AS created_at 
+FROM repo ORDER BY repo.id ASC) AS anon_1
+2026-01-02 03:28:28,248 | INFO | sqlalchemy.engine.Engine | [cached since 62.96s ago] ()
+2026-01-02 03:28:28,248 | INFO | sqlalchemy.engine.Engine | [cached since 62.96s ago] ()
+2026-01-02 03:28:28,250 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 03:28:28,250 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 03:28:28,251 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:28:28,251 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:28:28,253 | INFO | sqlalchemy.engine.Engine | SELECT repo.id, repo.repo, repo.issues_fetched, repo.cached_successfully, repo.created_at 
+FROM repo ORDER BY repo.id ASC
+ LIMIT ? OFFSET ?
+2026-01-02 03:28:28,253 | INFO | sqlalchemy.engine.Engine | SELECT repo.id, repo.repo, repo.issues_fetched, repo.cached_successfully, repo.created_at 
+FROM repo ORDER BY repo.id ASC
+ LIMIT ? OFFSET ?
+2026-01-02 03:28:28,253 | INFO | sqlalchemy.engine.Engine | [generated in 0.00045s] (10, 0)
+2026-01-02 03:28:28,253 | INFO | sqlalchemy.engine.Engine | [generated in 0.00045s] (10, 0)
+2026-01-02 03:28:28,254 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 03:28:28,254 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 03:28:28,257 | INFO | uvicorn.access | 127.0.0.1:63778 - "GET /admin/repo/list HTTP/1.1" 200
+2026-01-02 03:28:29,527 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:28:29,527 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:28:29,528 | INFO | sqlalchemy.engine.Engine | SELECT count(*) AS count_1 
+FROM (SELECT issue.id AS id, issue.repo_id AS repo_id, issue.title AS title, issue.body AS body, issue.html_url AS html_url, issue.created_at AS created_at 
+FROM issue ORDER BY issue.id ASC) AS anon_1
+2026-01-02 03:28:29,528 | INFO | sqlalchemy.engine.Engine | SELECT count(*) AS count_1 
+FROM (SELECT issue.id AS id, issue.repo_id AS repo_id, issue.title AS title, issue.body AS body, issue.html_url AS html_url, issue.created_at AS created_at 
+FROM issue ORDER BY issue.id ASC) AS anon_1
+2026-01-02 03:28:29,528 | INFO | sqlalchemy.engine.Engine | [cached since 59.4s ago] ()
+2026-01-02 03:28:29,528 | INFO | sqlalchemy.engine.Engine | [cached since 59.4s ago] ()
+2026-01-02 03:28:29,528 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 03:28:29,528 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 03:28:29,529 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:28:29,529 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:28:29,529 | INFO | sqlalchemy.engine.Engine | SELECT issue.id, issue.repo_id, issue.title, issue.body, issue.html_url, issue.created_at 
+FROM issue ORDER BY issue.id ASC
+ LIMIT ? OFFSET ?
+2026-01-02 03:28:29,529 | INFO | sqlalchemy.engine.Engine | SELECT issue.id, issue.repo_id, issue.title, issue.body, issue.html_url, issue.created_at 
+FROM issue ORDER BY issue.id ASC
+ LIMIT ? OFFSET ?
+2026-01-02 03:28:29,530 | INFO | sqlalchemy.engine.Engine | [generated in 0.00020s] (10, 0)
+2026-01-02 03:28:29,530 | INFO | sqlalchemy.engine.Engine | [generated in 0.00020s] (10, 0)
+2026-01-02 03:28:29,530 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 03:28:29,530 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 03:28:29,535 | INFO | uvicorn.access | 127.0.0.1:63795 - "GET /admin/issue/list HTTP/1.1" 200
+2026-01-02 03:28:56,691 | INFO | uvicorn.access | 127.0.0.1:63930 - "GET / HTTP/1.1" 200
+2026-01-02 03:33:19,337 | INFO | uvicorn.error | Shutting down
+2026-01-02 03:33:19,447 | INFO | uvicorn.error | Waiting for application shutdown.
+2026-01-02 03:33:19,450 | INFO | uvicorn.error | Application shutdown complete.
+2026-01-02 03:33:19,450 | INFO | uvicorn.error | Finished server process [88143]
+2026-01-02 03:33:22,616 | INFO | uvicorn.error | Started server process [89106]
+2026-01-02 03:33:22,616 | INFO | uvicorn.error | Waiting for application startup.
+2026-01-02 03:33:22,618 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:33:22,618 | INFO | sqlalchemy.engine.Engine | PRAGMA main.table_info("issue")
+2026-01-02 03:33:22,618 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 03:33:22,619 | INFO | sqlalchemy.engine.Engine | PRAGMA main.table_info("repo")
+2026-01-02 03:33:22,619 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 03:33:22,619 | INFO | sqlalchemy.engine.Engine | COMMIT
+2026-01-02 03:33:22,619 | INFO | uvicorn.error | Application startup complete.
+2026-01-02 03:33:22,619 | INFO | uvicorn.error | Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2026-01-02 03:34:03,945 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:34:03,951 | INFO | sqlalchemy.engine.Engine | SELECT repo.id, repo.repo, repo.issues_fetched, repo.cached_successfully, repo.created_at 
+FROM repo 
+WHERE repo.repo = ?
+2026-01-02 03:34:03,952 | INFO | sqlalchemy.engine.Engine | [generated in 0.00090s] ('creativetimofficial/notus-nextjs',)
+2026-01-02 03:34:03,960 | INFO | sqlalchemy.engine.Engine | DELETE FROM issue WHERE issue.repo_id = ?
+2026-01-02 03:34:03,960 | INFO | sqlalchemy.engine.Engine | [generated in 0.00030s] (1,)
+2026-01-02 03:34:03,966 | INFO | sqlalchemy.engine.Engine | INSERT INTO issue (id, repo_id, title, body, html_url, created_at) VALUES (?, ?, ?, ?, ?, ?)
+2026-01-02 03:34:03,966 | INFO | sqlalchemy.engine.Engine | [generated in 0.00030s] [(1469363780, 1, '[Bug] npm run dev error : ERR_PACKAGE_PATH_NOT_EXPORTED', '### Version\r\nnotus-nextjs@1.1.0\r\n### Reproduction link\r\nhttps://github.com/creativetimofficial/notus-nextjs\r\n### Operating System\r\nmacOS Mo ... (1740 characters truncated) ... beb6-c526c1dd2169.png">\r\n\r\n\r\n---\r\n### Solution\r\n\r\n### Additional comments\r\n\r\n<!-- generated by creative-tim-issues. DO NOT REMOVE -->', 'https://github.com/creativetimofficial/notus-nextjs/issues/26', '2022-11-30 10:02:26.000000'), (1137089979, 1, '[Bug] @next/postcss', "### Version\r\nmain\r\n### Reproduction link\r\n-\r\n### Operating System\r\nWindows\r\n### Device\r\nROG\r\n### Browser & Version\r\nChrome\r\n### S ... (177 characters truncated) ... r like this, what happened?\r\n\r\n---\r\n### Solution\r\n\r\n### Additional comments\r\n\r\n<!-- generated by creative-tim-issues. DO NOT REMOVE -->", 'https://github.com/creativetimofficial/notus-nextjs/issues/22', '2022-02-14 10:26:14.000000'), (1058777341, 1, 'TableDropdown.js is a copy of NotificationDropdown.js', '### Version\r\n1.1.0\r\n### Reproduction link\r\nhttps://github.com/creativetimofficial/notus-nextjs/blob/main/components/Dropdowns/TableDropdown.js\ ... (451 characters truncated) ... ting a NotificationDropdown\r\n\r\n---\r\n### Solution\r\n\r\n### Additional comments\r\n\r\n<!-- generated by creative-tim-issues. DO NOT REMOVE -->', 'https://github.com/creativetimofficial/notus-nextjs/issues/18', '2021-11-19 17:52:29.000000'), (1031032892, 1, '[Feature Request] Add Ability to Close Popovers on Esc Key/Click Off Events', '### What is your enhancement?\r\nI would like to have Dropdowns/Popovers close when pressing the Escape key or when clicking off/away from the component. Currently, they stay until you click the anchor point again.\r\n<!-- generated by creative-tim-issues. DO NOT REMOVE -->', 'https://github.com/creativetimofficial/notus-nextjs/issues/16', '2021-10-20 06:36:46.000000')]
+2026-01-02 03:34:03,967 | INFO | sqlalchemy.engine.Engine | COMMIT
+2026-01-02 03:34:03,968 | INFO | app_logger.scan_service | Fetched and cached 4 issues for creativetimofficial/notus-nextjs
+2026-01-02 03:34:03,968 | INFO | app_logger.scan_service | Fetched and cached 4 issues for creativetimofficial/notus-nextjs
+2026-01-02 03:34:03,971 | INFO | uvicorn.access | 127.0.0.1:65402 - "POST /scan HTTP/1.1" 200
+2026-01-02 03:34:32,986 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:34:32,991 | INFO | sqlalchemy.engine.Engine | SELECT count(*) AS count_1 
+FROM (SELECT repo.id AS id, repo.repo AS repo, repo.issues_fetched AS issues_fetched, repo.cached_successfully AS cached_successfully, repo.created_at AS created_at 
+FROM repo ORDER BY repo.id ASC) AS anon_1
+2026-01-02 03:34:32,991 | INFO | sqlalchemy.engine.Engine | [generated in 0.00025s] ()
+2026-01-02 03:34:32,992 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 03:34:32,992 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:34:32,993 | INFO | sqlalchemy.engine.Engine | SELECT repo.id, repo.repo, repo.issues_fetched, repo.cached_successfully, repo.created_at 
+FROM repo ORDER BY repo.id ASC
+ LIMIT ? OFFSET ?
+2026-01-02 03:34:32,993 | INFO | sqlalchemy.engine.Engine | [generated in 0.00013s] (10, 0)
+2026-01-02 03:34:32,993 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 03:34:33,035 | INFO | uvicorn.access | 127.0.0.1:49156 - "GET /admin/repo/list HTTP/1.1" 200
+2026-01-02 03:36:54,803 | INFO | uvicorn.error | Shutting down
+2026-01-02 03:36:54,908 | INFO | uvicorn.error | Waiting for application shutdown.
+2026-01-02 03:36:54,910 | INFO | uvicorn.error | Application shutdown complete.
+2026-01-02 03:36:54,911 | INFO | uvicorn.error | Finished server process [89106]
+2026-01-02 03:36:56,813 | INFO | uvicorn.error | Started server process [89621]
+2026-01-02 03:36:56,813 | INFO | uvicorn.error | Waiting for application startup.
+2026-01-02 03:36:56,815 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:36:56,815 | INFO | sqlalchemy.engine.Engine | PRAGMA main.table_info("issue")
+2026-01-02 03:36:56,815 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 03:36:56,815 | INFO | sqlalchemy.engine.Engine | PRAGMA main.table_info("repo")
+2026-01-02 03:36:56,815 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 03:36:56,815 | INFO | sqlalchemy.engine.Engine | COMMIT
+2026-01-02 03:36:56,815 | INFO | uvicorn.error | Application startup complete.
+2026-01-02 03:36:56,815 | INFO | uvicorn.error | Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2026-01-02 03:37:12,047 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:37:12,051 | INFO | sqlalchemy.engine.Engine | SELECT repo.id, repo.repo, repo.issues_fetched, repo.cached_successfully, repo.created_at 
+FROM repo 
+WHERE repo.repo = ?
+2026-01-02 03:37:12,052 | INFO | sqlalchemy.engine.Engine | [generated in 0.00047s] ('creativetimofficial/notus-nextjs',)
+2026-01-02 03:37:12,054 | INFO | sqlalchemy.engine.Engine | DELETE FROM issue WHERE issue.repo_id = ?
+2026-01-02 03:37:12,054 | INFO | sqlalchemy.engine.Engine | [generated in 0.00029s] (1,)
+2026-01-02 03:37:12,060 | INFO | sqlalchemy.engine.Engine | INSERT INTO issue (id, repo_id, title, body, html_url, created_at) VALUES (?, ?, ?, ?, ?, ?)
+2026-01-02 03:37:12,060 | INFO | sqlalchemy.engine.Engine | [generated in 0.00031s] [(1469363780, 1, '[Bug] npm run dev error : ERR_PACKAGE_PATH_NOT_EXPORTED', '### Version\r\nnotus-nextjs@1.1.0\r\n### Reproduction link\r\nhttps://github.com/creativetimofficial/notus-nextjs\r\n### Operating System\r\nmacOS Mo ... (1740 characters truncated) ... beb6-c526c1dd2169.png">\r\n\r\n\r\n---\r\n### Solution\r\n\r\n### Additional comments\r\n\r\n<!-- generated by creative-tim-issues. DO NOT REMOVE -->', 'https://github.com/creativetimofficial/notus-nextjs/issues/26', '2022-11-30 10:02:26.000000'), (1137089979, 1, '[Bug] @next/postcss', "### Version\r\nmain\r\n### Reproduction link\r\n-\r\n### Operating System\r\nWindows\r\n### Device\r\nROG\r\n### Browser & Version\r\nChrome\r\n### S ... (177 characters truncated) ... r like this, what happened?\r\n\r\n---\r\n### Solution\r\n\r\n### Additional comments\r\n\r\n<!-- generated by creative-tim-issues. DO NOT REMOVE -->", 'https://github.com/creativetimofficial/notus-nextjs/issues/22', '2022-02-14 10:26:14.000000'), (1058777341, 1, 'TableDropdown.js is a copy of NotificationDropdown.js', '### Version\r\n1.1.0\r\n### Reproduction link\r\nhttps://github.com/creativetimofficial/notus-nextjs/blob/main/components/Dropdowns/TableDropdown.js\ ... (451 characters truncated) ... ting a NotificationDropdown\r\n\r\n---\r\n### Solution\r\n\r\n### Additional comments\r\n\r\n<!-- generated by creative-tim-issues. DO NOT REMOVE -->', 'https://github.com/creativetimofficial/notus-nextjs/issues/18', '2021-11-19 17:52:29.000000'), (1031032892, 1, '[Feature Request] Add Ability to Close Popovers on Esc Key/Click Off Events', '### What is your enhancement?\r\nI would like to have Dropdowns/Popovers close when pressing the Escape key or when clicking off/away from the component. Currently, they stay until you click the anchor point again.\r\n<!-- generated by creative-tim-issues. DO NOT REMOVE -->', 'https://github.com/creativetimofficial/notus-nextjs/issues/16', '2021-10-20 06:36:46.000000')]
+2026-01-02 03:37:12,061 | INFO | sqlalchemy.engine.Engine | COMMIT
+2026-01-02 03:37:12,062 | INFO | app_logger.scan_service | Fetched and cached 4 issues for creativetimofficial/notus-nextjs
+2026-01-02 03:37:12,064 | INFO | uvicorn.access | 127.0.0.1:49912 - "POST /scan HTTP/1.1" 200
+2026-01-02 03:37:55,199 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:37:55,204 | INFO | sqlalchemy.engine.Engine | SELECT count(*) AS count_1 
+FROM (SELECT repo.id AS id, repo.repo AS repo, repo.issues_fetched AS issues_fetched, repo.cached_successfully AS cached_successfully, repo.created_at AS created_at 
+FROM repo ORDER BY repo.id ASC) AS anon_1
+2026-01-02 03:37:55,204 | INFO | sqlalchemy.engine.Engine | [generated in 0.00044s] ()
+2026-01-02 03:37:55,205 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 03:37:55,205 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:37:55,206 | INFO | sqlalchemy.engine.Engine | SELECT repo.id, repo.repo, repo.issues_fetched, repo.cached_successfully, repo.created_at 
+FROM repo ORDER BY repo.id ASC
+ LIMIT ? OFFSET ?
+2026-01-02 03:37:55,206 | INFO | sqlalchemy.engine.Engine | [generated in 0.00014s] (10, 0)
+2026-01-02 03:37:55,207 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 03:37:55,244 | INFO | uvicorn.access | 127.0.0.1:50131 - "GET /admin/repo/list HTTP/1.1" 200
+2026-01-02 03:38:00,906 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:38:00,908 | INFO | sqlalchemy.engine.Engine | SELECT count(*) AS count_1 
+FROM (SELECT issue.id AS id, issue.repo_id AS repo_id, issue.title AS title, issue.body AS body, issue.html_url AS html_url, issue.created_at AS created_at 
+FROM issue ORDER BY issue.id ASC) AS anon_1
+2026-01-02 03:38:00,908 | INFO | sqlalchemy.engine.Engine | [generated in 0.00034s] ()
+2026-01-02 03:38:00,909 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 03:38:00,910 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:38:00,911 | INFO | sqlalchemy.engine.Engine | SELECT issue.id, issue.repo_id, issue.title, issue.body, issue.html_url, issue.created_at 
+FROM issue ORDER BY issue.id ASC
+ LIMIT ? OFFSET ?
+2026-01-02 03:38:00,911 | INFO | sqlalchemy.engine.Engine | [generated in 0.00021s] (10, 0)
+2026-01-02 03:38:00,911 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 03:38:00,917 | INFO | uvicorn.access | 127.0.0.1:50159 - "GET /admin/issue/list HTTP/1.1" 200
+2026-01-02 03:38:47,404 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:38:47,413 | INFO | sqlalchemy.engine.Engine | SELECT repo.id, repo.repo, repo.issues_fetched, repo.cached_successfully, repo.created_at 
+FROM repo 
+WHERE repo.id = ?
+2026-01-02 03:38:47,413 | INFO | sqlalchemy.engine.Engine | [generated in 0.00043s] (1,)
+2026-01-02 03:38:47,416 | INFO | sqlalchemy.engine.Engine | SELECT issue.repo_id AS issue_repo_id, issue.id AS issue_id, issue.title AS issue_title, issue.body AS issue_body, issue.html_url AS issue_html_url, issue.created_at AS issue_created_at 
+FROM issue 
+WHERE issue.repo_id IN (?)
+2026-01-02 03:38:47,416 | INFO | sqlalchemy.engine.Engine | [generated in 0.00025s] (1,)
+2026-01-02 03:38:47,417 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 03:38:47,433 | INFO | uvicorn.access | 127.0.0.1:50394 - "GET /admin/repo/details/1 HTTP/1.1" 200
+2026-01-02 03:38:51,389 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:38:51,389 | INFO | sqlalchemy.engine.Engine | SELECT count(*) AS count_1 
+FROM (SELECT issue.id AS id, issue.repo_id AS repo_id, issue.title AS title, issue.body AS body, issue.html_url AS html_url, issue.created_at AS created_at 
+FROM issue ORDER BY issue.id ASC) AS anon_1
+2026-01-02 03:38:51,390 | INFO | sqlalchemy.engine.Engine | [cached since 50.48s ago] ()
+2026-01-02 03:38:51,390 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 03:38:51,391 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:38:51,392 | INFO | sqlalchemy.engine.Engine | SELECT issue.id, issue.repo_id, issue.title, issue.body, issue.html_url, issue.created_at 
+FROM issue ORDER BY issue.id ASC
+ LIMIT ? OFFSET ?
+2026-01-02 03:38:51,392 | INFO | sqlalchemy.engine.Engine | [generated in 0.00022s] (10, 0)
+2026-01-02 03:38:51,393 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 03:38:51,400 | INFO | uvicorn.access | 127.0.0.1:50417 - "GET /admin/issue/list HTTP/1.1" 200
+2026-01-02 03:38:53,723 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:38:53,726 | INFO | sqlalchemy.engine.Engine | SELECT issue.id, issue.repo_id, issue.title, issue.body, issue.html_url, issue.created_at 
+FROM issue 
+WHERE issue.id = ?
+2026-01-02 03:38:53,727 | INFO | sqlalchemy.engine.Engine | [generated in 0.00034s] (1058777341,)
+2026-01-02 03:38:53,728 | INFO | sqlalchemy.engine.Engine | SELECT repo.id AS repo_id, repo.repo AS repo_repo, repo.issues_fetched AS repo_issues_fetched, repo.cached_successfully AS repo_cached_successfully, repo.created_at AS repo_created_at 
+FROM repo 
+WHERE repo.id IN (?)
+2026-01-02 03:38:53,728 | INFO | sqlalchemy.engine.Engine | [generated in 0.00030s] (1,)
+2026-01-02 03:38:53,729 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 03:38:53,732 | INFO | uvicorn.access | 127.0.0.1:50417 - "GET /admin/issue/details/1058777341 HTTP/1.1" 200
+2026-01-02 03:39:00,597 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:39:00,598 | INFO | sqlalchemy.engine.Engine | SELECT repo.id, repo.repo, repo.issues_fetched, repo.cached_successfully, repo.created_at 
+FROM repo 
+WHERE repo.id = ?
+2026-01-02 03:39:00,598 | INFO | sqlalchemy.engine.Engine | [cached since 13.18s ago] (1,)
+2026-01-02 03:39:00,599 | INFO | sqlalchemy.engine.Engine | SELECT issue.repo_id AS issue_repo_id, issue.id AS issue_id, issue.title AS issue_title, issue.body AS issue_body, issue.html_url AS issue_html_url, issue.created_at AS issue_created_at 
+FROM issue 
+WHERE issue.repo_id IN (?)
+2026-01-02 03:39:00,599 | INFO | sqlalchemy.engine.Engine | [cached since 13.18s ago] (1,)
+2026-01-02 03:39:00,600 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 03:39:00,604 | INFO | uvicorn.access | 127.0.0.1:50464 - "GET /admin/repo/details/1 HTTP/1.1" 200
+2026-01-02 03:39:08,255 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:39:08,257 | INFO | sqlalchemy.engine.Engine | SELECT issue.id, issue.repo_id, issue.title, issue.body, issue.html_url, issue.created_at 
+FROM issue 
+WHERE issue.id = ?
+2026-01-02 03:39:08,257 | INFO | sqlalchemy.engine.Engine | [cached since 14.53s ago] (1469363780,)
+2026-01-02 03:39:08,259 | INFO | sqlalchemy.engine.Engine | SELECT repo.id AS repo_id, repo.repo AS repo_repo, repo.issues_fetched AS repo_issues_fetched, repo.cached_successfully AS repo_cached_successfully, repo.created_at AS repo_created_at 
+FROM repo 
+WHERE repo.id IN (?)
+2026-01-02 03:39:08,259 | INFO | sqlalchemy.engine.Engine | [cached since 14.53s ago] (1,)
+2026-01-02 03:39:08,260 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 03:39:08,263 | INFO | uvicorn.access | 127.0.0.1:50505 - "GET /admin/issue/details/1469363780 HTTP/1.1" 200
+2026-01-02 03:39:16,340 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:39:16,342 | INFO | sqlalchemy.engine.Engine | SELECT repo.id, repo.repo, repo.issues_fetched, repo.cached_successfully, repo.created_at 
+FROM repo 
+WHERE repo.id = ?
+2026-01-02 03:39:16,342 | INFO | sqlalchemy.engine.Engine | [cached since 28.93s ago] (1,)
+2026-01-02 03:39:16,344 | INFO | sqlalchemy.engine.Engine | SELECT issue.repo_id AS issue_repo_id, issue.id AS issue_id, issue.title AS issue_title, issue.body AS issue_body, issue.html_url AS issue_html_url, issue.created_at AS issue_created_at 
+FROM issue 
+WHERE issue.repo_id IN (?)
+2026-01-02 03:39:16,344 | INFO | sqlalchemy.engine.Engine | [cached since 28.93s ago] (1,)
+2026-01-02 03:39:16,345 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 03:39:16,348 | INFO | uvicorn.access | 127.0.0.1:50546 - "GET /admin/repo/details/1 HTTP/1.1" 200
+2026-01-02 03:39:18,384 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:39:18,385 | INFO | sqlalchemy.engine.Engine | SELECT issue.id, issue.repo_id, issue.title, issue.body, issue.html_url, issue.created_at 
+FROM issue 
+WHERE issue.id = ?
+2026-01-02 03:39:18,385 | INFO | sqlalchemy.engine.Engine | [cached since 24.66s ago] (1031032892,)
+2026-01-02 03:39:18,386 | INFO | sqlalchemy.engine.Engine | SELECT repo.id AS repo_id, repo.repo AS repo_repo, repo.issues_fetched AS repo_issues_fetched, repo.cached_successfully AS repo_cached_successfully, repo.created_at AS repo_created_at 
+FROM repo 
+WHERE repo.id IN (?)
+2026-01-02 03:39:18,386 | INFO | sqlalchemy.engine.Engine | [cached since 24.66s ago] (1,)
+2026-01-02 03:39:18,387 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 03:39:18,389 | INFO | uvicorn.access | 127.0.0.1:50546 - "GET /admin/issue/details/1031032892 HTTP/1.1" 200
+2026-01-02 03:39:34,169 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:39:34,172 | INFO | sqlalchemy.engine.Engine | SELECT count(*) AS count_1 
+FROM (SELECT issue.id AS id, issue.repo_id AS repo_id, issue.title AS title, issue.body AS body, issue.html_url AS html_url, issue.created_at AS created_at 
+FROM issue ORDER BY issue.id ASC) AS anon_1
+2026-01-02 03:39:34,172 | INFO | sqlalchemy.engine.Engine | [cached since 93.26s ago] ()
+2026-01-02 03:39:34,174 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 03:39:34,175 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 03:39:34,175 | INFO | sqlalchemy.engine.Engine | SELECT issue.id, issue.repo_id, issue.title, issue.body, issue.html_url, issue.created_at 
+FROM issue ORDER BY issue.id ASC
+ LIMIT ? OFFSET ?
+2026-01-02 03:39:34,175 | INFO | sqlalchemy.engine.Engine | [cached since 42.78s ago] (10, 0)
+2026-01-02 03:39:34,176 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 03:39:34,181 | INFO | uvicorn.access | 127.0.0.1:50633 - "GET /admin/issue/list HTTP/1.1" 200
