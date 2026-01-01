@@ -665,3 +665,90 @@ FROM issue ORDER BY issue.id ASC
 2026-01-02 03:39:34,175 | INFO | sqlalchemy.engine.Engine | [cached since 42.78s ago] (10, 0)
 2026-01-02 03:39:34,176 | INFO | sqlalchemy.engine.Engine | ROLLBACK
 2026-01-02 03:39:34,181 | INFO | uvicorn.access | 127.0.0.1:50633 - "GET /admin/issue/list HTTP/1.1" 200
+2026-01-02 03:47:29,682 | INFO | uvicorn.error | Shutting down
+2026-01-02 03:47:29,792 | INFO | uvicorn.error | Waiting for application shutdown.
+2026-01-02 03:47:29,796 | INFO | uvicorn.error | Application shutdown complete.
+2026-01-02 03:47:29,796 | INFO | uvicorn.error | Finished server process [89621]
+2026-01-02 04:08:02,079 | INFO | uvicorn.error | Started server process [93106]
+2026-01-02 04:08:02,079 | INFO | uvicorn.error | Waiting for application startup.
+2026-01-02 04:08:02,082 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 04:08:02,083 | INFO | sqlalchemy.engine.Engine | PRAGMA main.table_info("issue")
+2026-01-02 04:08:02,083 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 04:08:02,083 | INFO | sqlalchemy.engine.Engine | PRAGMA main.table_info("repo")
+2026-01-02 04:08:02,083 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 04:08:02,083 | INFO | sqlalchemy.engine.Engine | COMMIT
+2026-01-02 04:08:02,083 | INFO | uvicorn.error | Application startup complete.
+2026-01-02 04:08:02,083 | INFO | uvicorn.error | Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2026-01-02 04:08:24,793 | INFO | uvicorn.access | 127.0.0.1:57487 - "GET /docs HTTP/1.1" 401
+2026-01-02 04:08:29,808 | INFO | uvicorn.access | 127.0.0.1:57487 - "GET /docs HTTP/1.1" 200
+2026-01-02 04:08:30,414 | INFO | uvicorn.access | 127.0.0.1:57487 - "GET /openapi.json HTTP/1.1" 200
+2026-01-02 04:08:41,526 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 04:08:41,533 | INFO | sqlalchemy.engine.Engine | SELECT repo.id, repo.repo, repo.issues_fetched, repo.cached_successfully, repo.created_at 
+FROM repo 
+WHERE repo.repo = ?
+2026-01-02 04:08:41,534 | INFO | sqlalchemy.engine.Engine | [generated in 0.00086s] ('creativetimofficial/notus-nextjs',)
+2026-01-02 04:08:41,539 | INFO | sqlalchemy.engine.Engine | SELECT issue.id, issue.repo_id, issue.title, issue.body, issue.html_url, issue.created_at 
+FROM issue 
+WHERE issue.repo_id = ?
+2026-01-02 04:08:41,539 | INFO | sqlalchemy.engine.Engine | [generated in 0.00013s] (1,)
+2026-01-02 04:08:41,539 | INFO | app_logger.analyze_service | Sending prompt to OpenAI LLM.
+2026-01-02 04:08:51,670 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-02 04:08:51,706 | INFO | app_logger.analyze_service | Received analysis from OpenAI.
+2026-01-02 04:08:51,707 | INFO | uvicorn.access | 127.0.0.1:57489 - "POST /analyze HTTP/1.1" 200
+2026-01-02 04:08:51,708 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 04:10:50,125 | INFO | uvicorn.error | Shutting down
+2026-01-02 04:10:50,242 | INFO | uvicorn.error | Waiting for application shutdown.
+2026-01-02 04:10:50,252 | INFO | uvicorn.error | Application shutdown complete.
+2026-01-02 04:10:50,256 | INFO | uvicorn.error | Finished server process [93106]
+2026-01-02 04:12:38,332 | INFO | uvicorn.error | Started server process [93893]
+2026-01-02 04:12:38,332 | INFO | uvicorn.error | Waiting for application startup.
+2026-01-02 04:12:38,336 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 04:12:38,336 | INFO | sqlalchemy.engine.Engine | PRAGMA main.table_info("issue")
+2026-01-02 04:12:38,336 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 04:12:38,336 | INFO | sqlalchemy.engine.Engine | PRAGMA main.table_info("repo")
+2026-01-02 04:12:38,336 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 04:12:38,336 | INFO | sqlalchemy.engine.Engine | COMMIT
+2026-01-02 04:12:38,336 | INFO | uvicorn.error | Application startup complete.
+2026-01-02 04:12:38,337 | INFO | uvicorn.error | Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2026-01-02 04:12:47,695 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 04:12:47,698 | INFO | sqlalchemy.engine.Engine | SELECT repo.id, repo.repo, repo.issues_fetched, repo.cached_successfully, repo.created_at 
+FROM repo 
+WHERE repo.repo = ?
+2026-01-02 04:12:47,698 | INFO | sqlalchemy.engine.Engine | [generated in 0.00022s] ('creativetimofficial/notus-nextjs',)
+2026-01-02 04:12:47,699 | INFO | sqlalchemy.engine.Engine | SELECT issue.id, issue.repo_id, issue.title, issue.body, issue.html_url, issue.created_at 
+FROM issue 
+WHERE issue.repo_id = ?
+2026-01-02 04:12:47,699 | INFO | sqlalchemy.engine.Engine | [generated in 0.00011s] (1,)
+2026-01-02 04:12:47,700 | INFO | app_logger.analyze_service | Sending prompt to OpenAI LLM.
+2026-01-02 04:12:59,625 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-02 04:12:59,637 | INFO | app_logger.analyze_service | Received analysis from OpenAI.
+2026-01-02 04:12:59,638 | INFO | uvicorn.access | 127.0.0.1:57692 - "POST /analyze HTTP/1.1" 200
+2026-01-02 04:12:59,639 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 04:15:59,685 | INFO | uvicorn.error | Shutting down
+2026-01-02 04:15:59,796 | INFO | uvicorn.error | Waiting for application shutdown.
+2026-01-02 04:15:59,799 | INFO | uvicorn.error | Application shutdown complete.
+2026-01-02 04:15:59,800 | INFO | uvicorn.error | Finished server process [93893]
+2026-01-02 04:16:06,153 | INFO | uvicorn.error | Started server process [94454]
+2026-01-02 04:16:06,154 | INFO | uvicorn.error | Waiting for application startup.
+2026-01-02 04:16:06,156 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 04:16:06,156 | INFO | sqlalchemy.engine.Engine | PRAGMA main.table_info("issue")
+2026-01-02 04:16:06,156 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 04:16:06,156 | INFO | sqlalchemy.engine.Engine | PRAGMA main.table_info("repo")
+2026-01-02 04:16:06,156 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 04:16:06,157 | INFO | sqlalchemy.engine.Engine | COMMIT
+2026-01-02 04:16:06,157 | INFO | uvicorn.error | Application startup complete.
+2026-01-02 04:16:06,157 | INFO | uvicorn.error | Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2026-01-02 04:16:10,698 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 04:16:10,701 | INFO | sqlalchemy.engine.Engine | SELECT repo.id, repo.repo, repo.issues_fetched, repo.cached_successfully, repo.created_at 
+FROM repo 
+WHERE repo.repo = ?
+2026-01-02 04:16:10,701 | INFO | sqlalchemy.engine.Engine | [generated in 0.00025s] ('creativetimofficial/notus-nextjs',)
+2026-01-02 04:16:10,703 | INFO | sqlalchemy.engine.Engine | SELECT issue.id, issue.repo_id, issue.title, issue.body, issue.html_url, issue.created_at 
+FROM issue 
+WHERE issue.repo_id = ?
+2026-01-02 04:16:10,703 | INFO | sqlalchemy.engine.Engine | [generated in 0.00014s] (1,)
+2026-01-02 04:16:10,703 | INFO | app_logger.analyze_service | Sending prompt to OpenAI LLM.
+2026-01-02 04:16:19,362 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-02 04:16:19,374 | INFO | app_logger.analyze_service | Received analysis from OpenAI.
+2026-01-02 04:16:19,375 | INFO | uvicorn.access | 127.0.0.1:57867 - "POST /analyze HTTP/1.1" 200
+2026-01-02 04:16:19,376 | INFO | sqlalchemy.engine.Engine | ROLLBACK

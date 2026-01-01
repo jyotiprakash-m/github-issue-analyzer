@@ -1,8 +1,6 @@
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException
 from sqlmodel import Session
-from typing import List, Optional
 from pydantic import BaseModel
-from models import Issue, Repo
 from core.database import get_session
 from services import scan_service
 

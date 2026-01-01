@@ -12,7 +12,7 @@ import base64
 from sqladmin import Admin, ModelView
 # All Model imports
 from models import Issue, Repo
-from routes import scan_route
+from routes import scan_route, analyze_route
 
 security = HTTPBasic()
 def basic_auth(credentials: HTTPBasicCredentials = Depends(security)):
@@ -65,6 +65,7 @@ app.add_middleware(AdminBasicAuthMiddleware)
 
 # Include user routes
 app.include_router(scan_route.router, dependencies=[Depends(basic_auth)])
+app.include_router(analyze_route.router, dependencies=[Depends(basic_auth)])
 
 # Root endpoint
 @app.get("/")
