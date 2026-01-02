@@ -31,9 +31,13 @@
     let basicAuth = null;
     function getBasicAuth() {
         if (!basicAuth) {
-            const username = prompt('Username:');
-            const password = prompt('Password:');
-            basicAuth = 'Basic ' + btoa(username + ':' + password);
+            const credentials = prompt('Enter username and password (username:password):');
+            if (credentials && credentials.includes(':')) {
+                basicAuth = 'Basic ' + btoa(credentials);
+            } else {
+                alert('Invalid format. Please enter as username:password');
+                return getBasicAuth();
+            }
         }
         return basicAuth;
     }
@@ -55,6 +59,9 @@
             const data = await response.json();
             if (response.ok) {
                 resultDiv.textContent = `Fetched ${data.issues_fetched} issues. Cached: ${data.cached_successfully ? 'Yes' : 'No'}`;
+            } else if (response.status === 401) {
+                alert('Invalid username or password. Please try again.');
+                window.location.reload();
             } else {
                 resultDiv.textContent = data.detail || 'Error scanning repo.';
             }

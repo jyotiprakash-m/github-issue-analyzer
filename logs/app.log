@@ -915,3 +915,34 @@ FROM issue ORDER BY issue.id ASC
 2026-01-02 04:46:02,491 | INFO | uvicorn.access | 127.0.0.1:60572 - "GET /admin/issue/list HTTP/1.1" 200
 2026-01-02 04:48:33,041 | INFO | uvicorn.access | 127.0.0.1:60665 - "GET / HTTP/1.1" 200
 2026-01-02 04:48:33,066 | INFO | uvicorn.access | 127.0.0.1:60665 - "GET /static/styles.css HTTP/1.1" 304
+2026-01-02 10:13:55,674 | INFO | uvicorn.access | 127.0.0.1:62186 - "GET / HTTP/1.1" 200
+2026-01-02 10:13:55,728 | INFO | uvicorn.access | 127.0.0.1:62186 - "GET /static/styles.css HTTP/1.1" 304
+2026-01-02 10:14:26,987 | ERROR | app_logger.scan_service | Repository not found: ss
+2026-01-02 10:14:26,994 | INFO | uvicorn.access | 127.0.0.1:62220 - "POST /scan HTTP/1.1" 400
+2026-01-02 10:14:41,845 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 10:14:41,848 | INFO | sqlalchemy.engine.Engine | SELECT repo.id, repo.repo, repo.issues_fetched, repo.cached_successfully, repo.created_at 
+FROM repo 
+WHERE repo.repo = ?
+2026-01-02 10:14:41,848 | INFO | sqlalchemy.engine.Engine | [cached since 1637s ago] ('ttt',)
+2026-01-02 10:14:41,850 | ERROR | app_logger.analyze_service | Repo not found in cache: ttt
+2026-01-02 10:14:41,851 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 10:14:41,852 | INFO | uvicorn.access | 127.0.0.1:62239 - "POST /analyze HTTP/1.1" 404
+2026-01-02 10:14:58,899 | INFO | uvicorn.access | 127.0.0.1:62258 - "GET / HTTP/1.1" 200
+2026-01-02 10:15:07,011 | INFO | uvicorn.access | 127.0.0.1:62266 - "POST /scan HTTP/1.1" 401
+2026-01-02 10:15:26,628 | INFO | uvicorn.access | 127.0.0.1:62284 - "POST /scan HTTP/1.1" 401
+2026-01-02 10:15:35,989 | INFO | uvicorn.access | 127.0.0.1:62294 - "POST /scan HTTP/1.1" 401
+2026-01-02 10:15:43,617 | INFO | uvicorn.access | 127.0.0.1:62306 - "POST /scan HTTP/1.1" 401
+2026-01-02 10:15:54,486 | INFO | uvicorn.access | 127.0.0.1:62317 - "GET / HTTP/1.1" 200
+2026-01-02 10:16:04,619 | INFO | uvicorn.access | 127.0.0.1:62328 - "POST /scan HTTP/1.1" 401
+2026-01-02 10:16:32,959 | INFO | uvicorn.access | 127.0.0.1:62362 - "POST /scan HTTP/1.1" 401
+2026-01-02 10:16:39,831 | INFO | uvicorn.access | 127.0.0.1:62369 - "POST /scan HTTP/1.1" 401
+2026-01-02 10:17:09,641 | INFO | uvicorn.access | 127.0.0.1:62398 - "POST /scan HTTP/1.1" 401
+2026-01-02 10:17:12,593 | INFO | uvicorn.access | 127.0.0.1:62398 - "GET / HTTP/1.1" 200
+2026-01-02 10:18:02,733 | INFO | uvicorn.access | 127.0.0.1:62442 - "POST /scan HTTP/1.1" 401
+2026-01-02 10:20:11,164 | INFO | uvicorn.access | 127.0.0.1:62513 - "GET / HTTP/1.1" 200
+2026-01-02 10:20:20,697 | INFO | uvicorn.access | 127.0.0.1:62522 - "POST /scan HTTP/1.1" 401
+2026-01-02 10:22:13,897 | INFO | uvicorn.access | 127.0.0.1:62601 - "GET / HTTP/1.1" 200
+2026-01-02 10:22:22,565 | INFO | uvicorn.access | 127.0.0.1:62612 - "POST /scan HTTP/1.1" 401
+2026-01-02 10:22:29,391 | INFO | uvicorn.access | 127.0.0.1:62621 - "GET / HTTP/1.1" 200
+2026-01-02 10:26:09,976 | ERROR | app_logger.scan_service | Repository not found: jjh
+2026-01-02 10:26:09,983 | INFO | uvicorn.access | 127.0.0.1:62823 - "POST /scan HTTP/1.1" 400
