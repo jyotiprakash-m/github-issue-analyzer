@@ -5,6 +5,7 @@ from core.database import init_db, engine
 from core.config import settings
 import secrets
 from fastapi.staticfiles import StaticFiles
+from fastapi.responses import HTMLResponse
 from fastapi.openapi.docs import get_swagger_ui_html, get_redoc_html
 from fastapi import Request, Response
 from starlette.middleware.base import BaseHTTPMiddleware
@@ -28,7 +29,7 @@ async def lifespan(app: FastAPI):
     yield 
 
 app = FastAPI(title="GitHub Issue Analyzer API", lifespan=lifespan, docs_url=None, redoc_url=None)
-app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/static", StaticFiles(directory="view"), name="static")
 
 admin = Admin(app=app, engine=engine)
 
@@ -67,11 +68,12 @@ app.add_middleware(AdminBasicAuthMiddleware)
 app.include_router(scan_route.router, dependencies=[Depends(basic_auth)])
 app.include_router(analyze_route.router, dependencies=[Depends(basic_auth)])
 
-# Root endpoint
-@app.get("/")
-def read_root(credentials: HTTPBasicCredentials = Depends(security)):
-    basic_auth(credentials)
-    return {"message": "Welcome to the GitHub Issue Analyzer API"}
+
+# Serve the HTML UI at root
+@app.get("/", response_class=HTMLResponse)
+def serve_index():
+    with open("view/index.html", "r", encoding="utf-8") as f:
+        return f.read()
 
 @app.get("/docs", include_in_schema=False)
 def custom_swagger_ui(credentials: HTTPBasicCredentials = Depends(security)):

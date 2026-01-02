@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Issue Analyzer</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>GitHub Issue Analyzer</h1>
+        <form id="scan-form">
+            <label for="scan-repo">Repository (owner/repo):</label>
+            <input type="text" id="scan-repo" name="scan-repo" placeholder="e.g. microsoft/vscode" required>
+            <button type="submit">Scan & Cache Issues</button>
+        </form>
+        <div id="scan-result" class="result"></div>
+        <hr style="margin:2rem 0;">
+        <form id="analyze-form">
+            <label for="repo">Repository (owner/repo):</label>
+            <input type="text" id="repo" name="repo" placeholder="e.g. microsoft/vscode" required>
+            <label for="prompt">Prompt:</label>
+            <textarea id="prompt" name="prompt" rows="3" placeholder="e.g. Find common themes and recommend what to fix first." required></textarea>
+            <button type="submit">Analyze</button>
+        </form>
+        <div id="result" class="result"></div>
+    </div>
+    <script>
+    // Prompt for credentials once and reuse
+    let basicAuth = null;
+    function getBasicAuth() {
+        if (!basicAuth) {
+            const username = prompt('Username:');
+            const password = prompt('Password:');
+            basicAuth = 'Basic ' + btoa(username + ':' + password);
+        }
+        return basicAuth;
+    }
+
+    document.getElementById('scan-form').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const repo = document.getElementById('scan-repo').value;
+        const resultDiv = document.getElementById('scan-result');
+        resultDiv.textContent = 'Scanning...';
+        try {
+            const response = await fetch('/scan', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': getBasicAuth()
+                },
+                body: JSON.stringify({ repo })
+            });
+            const data = await response.json();
+            if (response.ok) {
+                resultDiv.textContent = `Fetched ${data.issues_fetched} issues. Cached: ${data.cached_successfully ? 'Yes' : 'No'}`;
+            } else {
+                resultDiv.textContent = data.detail || 'Error scanning repo.';
+            }
+        } catch (err) {
+            resultDiv.textContent = 'Network error.';
+        }
+    });
+
+    document.getElementById('analyze-form').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const repo = document.getElementById('repo').value;
+        const prompt = document.getElementById('prompt').value;
+        const resultDiv = document.getElementById('result');
+        resultDiv.textContent = 'Analyzing...';
+        try {
+            const response = await fetch('/analyze', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': getBasicAuth()
+                },
+                body: JSON.stringify({ repo, prompt })
+            });
+            const data = await response.json();
+            if (response.ok) {
+                // Render markdown using marked.js
+                resultDiv.innerHTML = window.marked.parse(data.analysis || '');
+            } else {
+                resultDiv.textContent = data.detail || 'Error analyzing issues.';
+            }
+        } catch (err) {
+            resultDiv.textContent = 'Network error.';
+        }
+    });
+    </script>
+</body>
+</html>
