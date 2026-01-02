@@ -1,4 +1,3 @@
-
 <div align="center">
 	<img src="https://img.shields.io/badge/Project-GitHub%20Issue%20Analyzer-blueviolet?style=for-the-badge&logo=github" alt="Project Badge" />
 </div>
@@ -191,6 +190,31 @@ lnav logs/app.log
 ```
 
 ---
+
+# Below are some additional details work through during development.
+
+## Why This Local Storage Option?
+
+This project uses SQLite as the local storage solution. SQLite is lightweight, serverless, and easy to set up, making it ideal for small to medium-sized projects and local development. It requires no additional configuration and stores data in a single file, which simplifies deployment and portability.
+
+## Prompts Used During Development
+
+Below are some of the prompts used with AI coding tools and for designing, debugging, and constructing the LLM request logic:
+
+### General Coding & Debugging
+- "How do I create a FastAPI endpoint that analyzes GitHub issues?"
+- "Generate a Pydantic model for a GitHub issue with title, body, and labels."
+- "How to connect FastAPI with SQLite using SQLAlchemy?"
+- "How to serve static files in FastAPI?"
+
+### LLM Request Construction (analyze endpoint)
+- "Prompt template for summarizing GitHub issues using an LLM."
+- "How to structure a prompt for extracting key insights from text?"
+- "Best practices for sending user input to OpenAI API in FastAPI."
+
+### README & Documentation
+- "How to embed a YouTube video and image in README.md?"
+- "What sections should be included in a project README for an AI coding assignment?"
 
 ## Troubleshooting
 
