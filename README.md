@@ -202,7 +202,7 @@ lnav logs/app.log
 ## Demo
 
 <div align="center" style="margin: 1.5em 0;">
-	<a href="https://youtu.be/Xy3FNP2_I-g" target="_blank">
+	<a href="https://youtu.be/Oqxi8HQVdBs" target="_blank">
 		<img src="view/demo.png" alt="Demo Screenshot" width="960" />
 	</a>
 	<br>
