@@ -215,5 +215,5 @@ lnav logs/app.log
 <div align="center" style="margin: 2em 0;">
 	<img src="view/architecture.png" alt="Project Architecture" width="960" />
 	<br>
-	<em>Project Architecture Overview</em>
+	<em>Schema Architecture Overview</em>
 </div>
