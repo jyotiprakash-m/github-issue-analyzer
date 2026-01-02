@@ -54,8 +54,8 @@ kusho/
 ### 1. Clone the Repository
 
 ```bash
-git clone <your-repo-url>
-cd kusho
+git clone https://github.com/jyotiprakash-m/github-issue-analyzer.git
+cd github-issue-analyzer
 ```
 
 
