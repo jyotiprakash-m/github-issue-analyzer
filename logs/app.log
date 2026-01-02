@@ -946,3 +946,214 @@ WHERE repo.repo = ?
 2026-01-02 10:22:29,391 | INFO | uvicorn.access | 127.0.0.1:62621 - "GET / HTTP/1.1" 200
 2026-01-02 10:26:09,976 | ERROR | app_logger.scan_service | Repository not found: jjh
 2026-01-02 10:26:09,983 | INFO | uvicorn.access | 127.0.0.1:62823 - "POST /scan HTTP/1.1" 400
+2026-01-02 10:48:12,757 | INFO | uvicorn.access | 127.0.0.1:63947 - "GET /redoc HTTP/1.1" 200
+2026-01-02 10:48:13,699 | INFO | uvicorn.access | 127.0.0.1:63947 - "GET /openapi.json HTTP/1.1" 200
+2026-01-02 10:49:16,990 | INFO | uvicorn.access | 127.0.0.1:64019 - "GET /admin HTTP/1.1" 307
+2026-01-02 10:49:17,011 | INFO | uvicorn.access | 127.0.0.1:64019 - "GET /admin/ HTTP/1.1" 200
+2026-01-02 10:49:17,916 | INFO | uvicorn.access | 127.0.0.1:64021 - "GET /admin/statics/css/tabler-icons.min.css HTTP/1.1" 200
+2026-01-02 10:49:17,917 | INFO | uvicorn.access | 127.0.0.1:64024 - "GET /admin/statics/css/fontawesome.min.css HTTP/1.1" 200
+2026-01-02 10:49:17,917 | INFO | uvicorn.access | 127.0.0.1:64026 - "GET /admin/statics/css/select2.min.css HTTP/1.1" 200
+2026-01-02 10:49:17,917 | INFO | uvicorn.access | 127.0.0.1:64019 - "GET /admin/statics/css/tabler.min.css HTTP/1.1" 200
+2026-01-02 10:49:17,918 | INFO | uvicorn.access | 127.0.0.1:64028 - "GET /admin/statics/css/flatpickr.min.css HTTP/1.1" 200
+2026-01-02 10:49:17,919 | INFO | uvicorn.access | 127.0.0.1:64030 - "GET /admin/statics/css/main.css HTTP/1.1" 200
+2026-01-02 10:49:17,930 | INFO | uvicorn.access | 127.0.0.1:64026 - "GET /admin/statics/js/jquery.min.js HTTP/1.1" 200
+2026-01-02 10:49:17,931 | INFO | uvicorn.access | 127.0.0.1:64028 - "GET /admin/statics/js/tabler.min.js HTTP/1.1" 200
+2026-01-02 10:49:17,932 | INFO | uvicorn.access | 127.0.0.1:64030 - "GET /admin/statics/js/popper.min.js HTTP/1.1" 200
+2026-01-02 10:49:17,934 | INFO | uvicorn.access | 127.0.0.1:64024 - "GET /admin/statics/js/bootstrap.min.js HTTP/1.1" 200
+2026-01-02 10:49:17,935 | INFO | uvicorn.access | 127.0.0.1:64021 - "GET /admin/statics/js/select2.full.min.js HTTP/1.1" 200
+2026-01-02 10:49:17,944 | INFO | uvicorn.access | 127.0.0.1:64030 - "GET /admin/statics/js/flatpickr.min.js HTTP/1.1" 200
+2026-01-02 10:49:17,945 | INFO | uvicorn.access | 127.0.0.1:64026 - "GET /admin/statics/js/main.js HTTP/1.1" 200
+2026-01-02 10:49:21,099 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 10:49:21,103 | INFO | sqlalchemy.engine.Engine | SELECT count(*) AS count_1 
+FROM (SELECT repo.id AS id, repo.repo AS repo, repo.issues_fetched AS issues_fetched, repo.cached_successfully AS cached_successfully, repo.created_at AS created_at 
+FROM repo ORDER BY repo.id ASC) AS anon_1
+2026-01-02 10:49:21,103 | INFO | sqlalchemy.engine.Engine | [cached since 3595s ago] ()
+2026-01-02 10:49:21,111 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 10:49:21,113 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 10:49:21,120 | INFO | sqlalchemy.engine.Engine | SELECT repo.id, repo.repo, repo.issues_fetched, repo.cached_successfully, repo.created_at 
+FROM repo ORDER BY repo.id ASC
+ LIMIT ? OFFSET ?
+2026-01-02 10:49:21,120 | INFO | sqlalchemy.engine.Engine | [generated in 0.00017s] (10, 0)
+2026-01-02 10:49:21,123 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 10:49:21,131 | INFO | uvicorn.access | 127.0.0.1:64034 - "GET /admin/repo/list HTTP/1.1" 200
+2026-01-02 10:49:21,208 | INFO | uvicorn.access | 127.0.0.1:64034 - "GET /admin/statics/webfonts/fa-solid-900.woff2 HTTP/1.1" 200
+2026-01-02 10:49:22,822 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 10:49:22,824 | INFO | sqlalchemy.engine.Engine | SELECT count(*) AS count_1 
+FROM (SELECT issue.id AS id, issue.repo_id AS repo_id, issue.title AS title, issue.body AS body, issue.html_url AS html_url, issue.created_at AS created_at 
+FROM issue ORDER BY issue.id ASC) AS anon_1
+2026-01-02 10:49:22,824 | INFO | sqlalchemy.engine.Engine | [cached since 3595s ago] ()
+2026-01-02 10:49:22,824 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 10:49:22,825 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 10:49:22,826 | INFO | sqlalchemy.engine.Engine | SELECT issue.id, issue.repo_id, issue.title, issue.body, issue.html_url, issue.created_at 
+FROM issue ORDER BY issue.id ASC
+ LIMIT ? OFFSET ?
+2026-01-02 10:49:22,827 | INFO | sqlalchemy.engine.Engine | [generated in 0.00032s] (10, 0)
+2026-01-02 10:49:22,827 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 10:49:22,837 | INFO | uvicorn.access | 127.0.0.1:64034 - "GET /admin/issue/list HTTP/1.1" 200
+2026-01-02 10:53:44,407 | INFO | uvicorn.access | 127.0.0.1:64836 - "GET /docs HTTP/1.1" 200
+2026-01-02 10:53:44,536 | INFO | uvicorn.access | 127.0.0.1:64836 - "GET /openapi.json HTTP/1.1" 200
+2026-01-02 10:53:51,360 | INFO | uvicorn.access | 127.0.0.1:64851 - "GET / HTTP/1.1" 200
+2026-01-02 10:54:25,292 | INFO | uvicorn.access | 127.0.0.1:64886 - "GET /static/styles.css HTTP/1.1" 200
+2026-01-02 10:54:41,923 | INFO | uvicorn.access | 127.0.0.1:64920 - "GET / HTTP/1.1" 200
+2026-01-02 10:57:55,310 | INFO | uvicorn.access | 127.0.0.1:65127 - "GET / HTTP/1.1" 200
+2026-01-02 11:00:01,279 | INFO | uvicorn.access | 127.0.0.1:65308 - "GET /admin HTTP/1.1" 307
+2026-01-02 11:00:01,299 | INFO | uvicorn.access | 127.0.0.1:65308 - "GET /admin/ HTTP/1.1" 200
+2026-01-02 11:00:03,544 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 11:00:03,547 | INFO | sqlalchemy.engine.Engine | SELECT count(*) AS count_1 
+FROM (SELECT repo.id AS id, repo.repo AS repo, repo.issues_fetched AS issues_fetched, repo.cached_successfully AS cached_successfully, repo.created_at AS created_at 
+FROM repo ORDER BY repo.id ASC) AS anon_1
+2026-01-02 11:00:03,548 | INFO | sqlalchemy.engine.Engine | [cached since 4237s ago] ()
+2026-01-02 11:00:03,551 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 11:00:03,552 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 11:00:03,552 | INFO | sqlalchemy.engine.Engine | SELECT repo.id, repo.repo, repo.issues_fetched, repo.cached_successfully, repo.created_at 
+FROM repo ORDER BY repo.id ASC
+ LIMIT ? OFFSET ?
+2026-01-02 11:00:03,552 | INFO | sqlalchemy.engine.Engine | [cached since 642.4s ago] (10, 0)
+2026-01-02 11:00:03,555 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 11:00:03,557 | INFO | uvicorn.access | 127.0.0.1:65314 - "GET /admin/repo/list HTTP/1.1" 200
+2026-01-02 11:00:54,624 | INFO | uvicorn.access | 127.0.0.1:65368 - "GET /docs HTTP/1.1" 200
+2026-01-02 11:00:54,785 | INFO | uvicorn.access | 127.0.0.1:65368 - "GET /openapi.json HTTP/1.1" 200
+2026-01-02 11:01:12,411 | INFO | uvicorn.access | 127.0.0.1:65393 - "GET /redoc HTTP/1.1" 200
+2026-01-02 11:01:12,574 | INFO | uvicorn.access | 127.0.0.1:65393 - "GET /openapi.json HTTP/1.1" 200
+2026-01-02 11:02:40,597 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 11:02:40,600 | INFO | sqlalchemy.engine.Engine | SELECT repo.id, repo.repo, repo.issues_fetched, repo.cached_successfully, repo.created_at 
+FROM repo 
+WHERE repo.repo = ?
+2026-01-02 11:02:40,601 | INFO | sqlalchemy.engine.Engine | [cached since 4516s ago] ('fastapi/fastapi',)
+2026-01-02 11:02:40,632 | INFO | sqlalchemy.engine.Engine | INSERT INTO repo (repo, issues_fetched, cached_successfully, created_at) VALUES (?, ?, ?, ?)
+2026-01-02 11:02:40,633 | INFO | sqlalchemy.engine.Engine | [generated in 0.00143s] ('fastapi/fastapi', 0, 0, '2026-01-02 05:32:40.603885')
+2026-01-02 11:02:40,636 | INFO | sqlalchemy.engine.Engine | COMMIT
+2026-01-02 11:02:40,639 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 11:02:40,640 | INFO | sqlalchemy.engine.Engine | SELECT repo.id, repo.repo, repo.issues_fetched, repo.cached_successfully, repo.created_at 
+FROM repo 
+WHERE repo.id = ?
+2026-01-02 11:02:40,640 | INFO | sqlalchemy.engine.Engine | [generated in 0.00012s] (2,)
+2026-01-02 11:02:40,641 | INFO | sqlalchemy.engine.Engine | UPDATE repo SET cached_successfully=? WHERE repo.id = ?
+2026-01-02 11:02:40,641 | INFO | sqlalchemy.engine.Engine | [generated in 0.00013s] (1, 2)
+2026-01-02 11:02:40,642 | INFO | sqlalchemy.engine.Engine | COMMIT
+2026-01-02 11:02:40,642 | INFO | app_logger.scan_service | Fetched and cached 0 issues for fastapi/fastapi
+2026-01-02 11:02:40,644 | INFO | uvicorn.access | 127.0.0.1:65480 - "POST /scan HTTP/1.1" 200
+2026-01-02 11:02:53,687 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 11:02:53,690 | INFO | sqlalchemy.engine.Engine | SELECT count(*) AS count_1 
+FROM (SELECT repo.id AS id, repo.repo AS repo, repo.issues_fetched AS issues_fetched, repo.cached_successfully AS cached_successfully, repo.created_at AS created_at 
+FROM repo ORDER BY repo.id ASC) AS anon_1
+2026-01-02 11:02:53,690 | INFO | sqlalchemy.engine.Engine | [cached since 4408s ago] ()
+2026-01-02 11:02:53,691 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 11:02:53,692 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 11:02:53,693 | INFO | sqlalchemy.engine.Engine | SELECT repo.id, repo.repo, repo.issues_fetched, repo.cached_successfully, repo.created_at 
+FROM repo ORDER BY repo.id ASC
+ LIMIT ? OFFSET ?
+2026-01-02 11:02:53,693 | INFO | sqlalchemy.engine.Engine | [cached since 812.6s ago] (10, 0)
+2026-01-02 11:02:53,694 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 11:02:53,698 | INFO | uvicorn.access | 127.0.0.1:65496 - "GET /admin/repo/list HTTP/1.1" 200
+2026-01-02 11:03:46,568 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 11:03:46,571 | INFO | sqlalchemy.engine.Engine | SELECT repo.id, repo.repo, repo.issues_fetched, repo.cached_successfully, repo.created_at 
+FROM repo 
+WHERE repo.repo = ?
+2026-01-02 11:03:46,572 | INFO | sqlalchemy.engine.Engine | [cached since 4582s ago] ('zhanymkanov/fastapi-best-practices',)
+2026-01-02 11:03:46,575 | INFO | sqlalchemy.engine.Engine | INSERT INTO repo (repo, issues_fetched, cached_successfully, created_at) VALUES (?, ?, ?, ?)
+2026-01-02 11:03:46,576 | INFO | sqlalchemy.engine.Engine | [cached since 65.94s ago] ('zhanymkanov/fastapi-best-practices', 0, 0, '2026-01-02 05:33:46.573863')
+2026-01-02 11:03:46,585 | INFO | sqlalchemy.engine.Engine | COMMIT
+2026-01-02 11:03:46,587 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 11:03:46,588 | INFO | sqlalchemy.engine.Engine | SELECT repo.id, repo.repo, repo.issues_fetched, repo.cached_successfully, repo.created_at 
+FROM repo 
+WHERE repo.id = ?
+2026-01-02 11:03:46,588 | INFO | sqlalchemy.engine.Engine | [cached since 65.95s ago] (3,)
+2026-01-02 11:03:46,611 | INFO | sqlalchemy.engine.Engine | UPDATE repo SET issues_fetched=?, cached_successfully=? WHERE repo.id = ?
+2026-01-02 11:03:46,611 | INFO | sqlalchemy.engine.Engine | [generated in 0.00035s] (8, 1, 3)
+2026-01-02 11:03:46,618 | INFO | sqlalchemy.engine.Engine | INSERT INTO issue (id, repo_id, title, body, html_url, created_at) VALUES (?, ?, ?, ?, ?, ?)
+2026-01-02 11:03:46,618 | INFO | sqlalchemy.engine.Engine | [generated in 0.00055s] [(3690223365, 3, 'use uv and pyproject.toml for project & requirement manage', '- with uv: 10-100x for requirement install\n- with pyproject.toml: dep for diff env; tool for format(ruff mypy) & build', 'https://github.com/zhanymkanov/fastapi-best-practices/issues/79', '2025-12-03 13:21:09.000000'), (3651598631, 3, 'Provide tips on logging', 'Awesome set of best practices, thanks for sharing! \n\nCould you please also provide some tips on logging e.g. logging config, dev/prod patterns', 'https://github.com/zhanymkanov/fastapi-best-practices/issues/78', '2025-11-21 13:00:56.000000'), (3533515126, 3, 'BaseHTTPMiddleware as anti-pattern to avoid anti-blocking', 'This week I was working in something related with the `BaseHTTPMiddleware` where due to the `StreamingResponse` and in some production settings, it c ... (1553 characters truncated) ... ns-to-log-requests-in](https://stackoverflow.com/questions/68830274/blocked-code-while-using-middleware-and-dependency-injections-to-log-requests-in)', 'https://github.com/zhanymkanov/fastapi-best-practices/issues/76', '2025-10-20 18:42:44.000000'), (3365925520, 3, 'Replace Enum with StrEnum for string-based enums', 'Currently, in the Pydantic section, the example defines a string-based enum as:\n\n\n\n```Python\nfrom enum import Enum\n\nclass MusicBand(str, Enum) ... (227 characters truncated) ... r:\n\n```Python\nfrom enum import StrEnum\n\nclass MusicBand(StrEnum):\n    AEROSMITH = "AEROSMITH"\n    QUEEN = "QUEEN"\n    ACDC = "AC/DC"\n\n\n```', 'https://github.com/zhanymkanov/fastapi-best-practices/issues/73', '2025-08-29 08:15:03.000000'), (3107710358, 3, 'My Customized “Blog Project – FastAPI Best Practices” Structure', 'I reviewed the structure you proposed in this repository and then built my own “**Blog Project – FastAPI Best Practices**” by adding a few customizat ... (993 characters truncated) ... ing I’ve learned into a single, maintainable project. Feel free to take a look and let me know if any parts should be reorganized or refined further.', 'https://github.com/zhanymkanov/fastapi-best-practices/issues/69', '2025-06-01 19:15:07.000000'), (2974205236, 3, 'Rename `router.py` to `routes.py` for better clarity', "Hi,\n\nI’ve been exploring your project structure and really appreciate how you’ve applied Domain-Driven Design (DDD) principles — it's well-organize ... (206 characters truncated) ... t's similar to how we use `urls.py` in `Django`, which helps in maintaining clarity across the project.\n\nWhat are your thoughts on this?\n\nThanks!", 'https://github.com/zhanymkanov/fastapi-best-practices/issues/66', '2025-04-05 13:34:00.000000'), (2942538538, 3, "Fintech api structure, large api's", 'hi, nice write up. im defs sharing this link with the team. \n\nso our structure is sort of similar. we have 2 "types" of api\'s. \n1. an application ... (3862 characters truncated) ... the code.. easier having a place for it up front. \n\nenums, https://github.com/fastapi/fastapi/discussions/11098 some cool stuff there. \n\n\n\n\n\n', 'https://github.com/zhanymkanov/fastapi-best-practices/issues/63', '2025-03-24 09:10:54.000000'), (1352316483, 3, 'Our Experiences with a similar structure', '@zhanymkanov thanks for the write up. It’s great to have some benchmarks on professional implementations, this is awesome and one of the most valuabl ... (20364 characters truncated) ... emove gcc -y && \\\r\n    apt autoremove -y\r\n\r\nADD . /app\r\nEXPOSE 8000\r\nCMD [".venv/bin/uvicorn", "app.asgi:app", "--host", "0.0.0.0"]\r\n```', 'https://github.com/zhanymkanov/fastapi-best-practices/issues/4', '2022-08-26 14:05:19.000000')]
+2026-01-02 11:03:46,620 | INFO | sqlalchemy.engine.Engine | COMMIT
+2026-01-02 11:03:46,621 | INFO | app_logger.scan_service | Fetched and cached 8 issues for zhanymkanov/fastapi-best-practices
+2026-01-02 11:03:46,623 | INFO | uvicorn.access | 127.0.0.1:49184 - "POST /scan HTTP/1.1" 200
+2026-01-02 11:03:53,886 | INFO | uvicorn.access | 127.0.0.1:49196 - "GET / HTTP/1.1" 200
+2026-01-02 11:03:57,882 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 11:03:57,894 | INFO | sqlalchemy.engine.Engine | SELECT count(*) AS count_1 
+FROM (SELECT repo.id AS id, repo.repo AS repo, repo.issues_fetched AS issues_fetched, repo.cached_successfully AS cached_successfully, repo.created_at AS created_at 
+FROM repo ORDER BY repo.id ASC) AS anon_1
+2026-01-02 11:03:57,897 | INFO | sqlalchemy.engine.Engine | [cached since 4472s ago] ()
+2026-01-02 11:03:57,907 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 11:03:57,911 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 11:03:57,911 | INFO | sqlalchemy.engine.Engine | SELECT repo.id, repo.repo, repo.issues_fetched, repo.cached_successfully, repo.created_at 
+FROM repo ORDER BY repo.id ASC
+ LIMIT ? OFFSET ?
+2026-01-02 11:03:57,912 | INFO | sqlalchemy.engine.Engine | [cached since 876.8s ago] (10, 0)
+2026-01-02 11:03:57,942 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 11:03:57,950 | INFO | uvicorn.access | 127.0.0.1:49196 - "GET /admin/repo/list HTTP/1.1" 200
+2026-01-02 11:04:54,602 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 11:04:54,605 | INFO | sqlalchemy.engine.Engine | SELECT repo.id, repo.repo, repo.issues_fetched, repo.cached_successfully, repo.created_at 
+FROM repo 
+WHERE repo.repo = ?
+2026-01-02 11:04:54,606 | INFO | sqlalchemy.engine.Engine | [cached since 4650s ago] ('zhanymkanov/fastapi-best-practices',)
+2026-01-02 11:04:54,618 | INFO | sqlalchemy.engine.Engine | DELETE FROM issue WHERE issue.repo_id = ?
+2026-01-02 11:04:54,618 | INFO | sqlalchemy.engine.Engine | [generated in 0.00036s] (3,)
+2026-01-02 11:04:54,623 | INFO | sqlalchemy.engine.Engine | INSERT INTO issue (id, repo_id, title, body, html_url, created_at) VALUES (?, ?, ?, ?, ?, ?)
+2026-01-02 11:04:54,623 | INFO | sqlalchemy.engine.Engine | [cached since 68.01s ago] [(3690223365, 3, 'use uv and pyproject.toml for project & requirement manage', '- with uv: 10-100x for requirement install\n- with pyproject.toml: dep for diff env; tool for format(ruff mypy) & build', 'https://github.com/zhanymkanov/fastapi-best-practices/issues/79', '2025-12-03 13:21:09.000000'), (3651598631, 3, 'Provide tips on logging', 'Awesome set of best practices, thanks for sharing! \n\nCould you please also provide some tips on logging e.g. logging config, dev/prod patterns', 'https://github.com/zhanymkanov/fastapi-best-practices/issues/78', '2025-11-21 13:00:56.000000'), (3533515126, 3, 'BaseHTTPMiddleware as anti-pattern to avoid anti-blocking', 'This week I was working in something related with the `BaseHTTPMiddleware` where due to the `StreamingResponse` and in some production settings, it c ... (1553 characters truncated) ... ns-to-log-requests-in](https://stackoverflow.com/questions/68830274/blocked-code-while-using-middleware-and-dependency-injections-to-log-requests-in)', 'https://github.com/zhanymkanov/fastapi-best-practices/issues/76', '2025-10-20 18:42:44.000000'), (3365925520, 3, 'Replace Enum with StrEnum for string-based enums', 'Currently, in the Pydantic section, the example defines a string-based enum as:\n\n\n\n```Python\nfrom enum import Enum\n\nclass MusicBand(str, Enum) ... (227 characters truncated) ... r:\n\n```Python\nfrom enum import StrEnum\n\nclass MusicBand(StrEnum):\n    AEROSMITH = "AEROSMITH"\n    QUEEN = "QUEEN"\n    ACDC = "AC/DC"\n\n\n```', 'https://github.com/zhanymkanov/fastapi-best-practices/issues/73', '2025-08-29 08:15:03.000000'), (3107710358, 3, 'My Customized “Blog Project – FastAPI Best Practices” Structure', 'I reviewed the structure you proposed in this repository and then built my own “**Blog Project – FastAPI Best Practices**” by adding a few customizat ... (993 characters truncated) ... ing I’ve learned into a single, maintainable project. Feel free to take a look and let me know if any parts should be reorganized or refined further.', 'https://github.com/zhanymkanov/fastapi-best-practices/issues/69', '2025-06-01 19:15:07.000000'), (2974205236, 3, 'Rename `router.py` to `routes.py` for better clarity', "Hi,\n\nI’ve been exploring your project structure and really appreciate how you’ve applied Domain-Driven Design (DDD) principles — it's well-organize ... (206 characters truncated) ... t's similar to how we use `urls.py` in `Django`, which helps in maintaining clarity across the project.\n\nWhat are your thoughts on this?\n\nThanks!", 'https://github.com/zhanymkanov/fastapi-best-practices/issues/66', '2025-04-05 13:34:00.000000'), (2942538538, 3, "Fintech api structure, large api's", 'hi, nice write up. im defs sharing this link with the team. \n\nso our structure is sort of similar. we have 2 "types" of api\'s. \n1. an application ... (3862 characters truncated) ... the code.. easier having a place for it up front. \n\nenums, https://github.com/fastapi/fastapi/discussions/11098 some cool stuff there. \n\n\n\n\n\n', 'https://github.com/zhanymkanov/fastapi-best-practices/issues/63', '2025-03-24 09:10:54.000000'), (1352316483, 3, 'Our Experiences with a similar structure', '@zhanymkanov thanks for the write up. It’s great to have some benchmarks on professional implementations, this is awesome and one of the most valuabl ... (20364 characters truncated) ... emove gcc -y && \\\r\n    apt autoremove -y\r\n\r\nADD . /app\r\nEXPOSE 8000\r\nCMD [".venv/bin/uvicorn", "app.asgi:app", "--host", "0.0.0.0"]\r\n```', 'https://github.com/zhanymkanov/fastapi-best-practices/issues/4', '2022-08-26 14:05:19.000000')]
+2026-01-02 11:04:54,625 | INFO | sqlalchemy.engine.Engine | COMMIT
+2026-01-02 11:04:54,627 | INFO | app_logger.scan_service | Fetched and cached 8 issues for zhanymkanov/fastapi-best-practices
+2026-01-02 11:04:54,629 | INFO | uvicorn.access | 127.0.0.1:49267 - "POST /scan HTTP/1.1" 200
+2026-01-02 11:05:14,435 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 11:05:14,439 | INFO | sqlalchemy.engine.Engine | SELECT repo.id, repo.repo, repo.issues_fetched, repo.cached_successfully, repo.created_at 
+FROM repo 
+WHERE repo.repo = ?
+2026-01-02 11:05:14,439 | INFO | sqlalchemy.engine.Engine | [cached since 4670s ago] ('zhanymkanov/fastapi-best-practices',)
+2026-01-02 11:05:14,441 | INFO | sqlalchemy.engine.Engine | SELECT issue.id, issue.repo_id, issue.title, issue.body, issue.html_url, issue.created_at 
+FROM issue 
+WHERE issue.repo_id = ?
+2026-01-02 11:05:14,441 | INFO | sqlalchemy.engine.Engine | [cached since 4670s ago] (3,)
+2026-01-02 11:05:14,443 | INFO | app_logger.analyze_service | Sending prompt to OpenAI LLM.
+2026-01-02 11:05:27,134 | INFO | httpx | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-02 11:05:27,150 | INFO | app_logger.analyze_service | Received analysis from OpenAI.
+2026-01-02 11:05:27,152 | INFO | uvicorn.access | 127.0.0.1:49289 - "POST /analyze HTTP/1.1" 200
+2026-01-02 11:05:27,153 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 11:05:39,126 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 11:05:39,129 | INFO | sqlalchemy.engine.Engine | SELECT count(*) AS count_1 
+FROM (SELECT repo.id AS id, repo.repo AS repo, repo.issues_fetched AS issues_fetched, repo.cached_successfully AS cached_successfully, repo.created_at AS created_at 
+FROM repo ORDER BY repo.id ASC) AS anon_1
+2026-01-02 11:05:39,129 | INFO | sqlalchemy.engine.Engine | [cached since 4573s ago] ()
+2026-01-02 11:05:39,133 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 11:05:39,134 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 11:05:39,134 | INFO | sqlalchemy.engine.Engine | SELECT repo.id, repo.repo, repo.issues_fetched, repo.cached_successfully, repo.created_at 
+FROM repo ORDER BY repo.id ASC
+ LIMIT ? OFFSET ?
+2026-01-02 11:05:39,134 | INFO | sqlalchemy.engine.Engine | [cached since 978s ago] (10, 0)
+2026-01-02 11:05:39,136 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 11:05:39,141 | INFO | uvicorn.access | 127.0.0.1:49320 - "GET /admin/repo/list HTTP/1.1" 200
+2026-01-02 11:05:40,569 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 11:05:40,570 | INFO | sqlalchemy.engine.Engine | SELECT count(*) AS count_1 
+FROM (SELECT repo.id AS id, repo.repo AS repo, repo.issues_fetched AS issues_fetched, repo.cached_successfully AS cached_successfully, repo.created_at AS created_at 
+FROM repo ORDER BY repo.id ASC) AS anon_1
+2026-01-02 11:05:40,570 | INFO | sqlalchemy.engine.Engine | [cached since 4574s ago] ()
+2026-01-02 11:05:40,571 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 11:05:40,572 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 11:05:40,572 | INFO | sqlalchemy.engine.Engine | SELECT repo.id, repo.repo, repo.issues_fetched, repo.cached_successfully, repo.created_at 
+FROM repo ORDER BY repo.id ASC
+ LIMIT ? OFFSET ?
+2026-01-02 11:05:40,572 | INFO | sqlalchemy.engine.Engine | [cached since 979.4s ago] (10, 0)
+2026-01-02 11:05:40,573 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 11:05:40,580 | INFO | uvicorn.access | 127.0.0.1:49320 - "GET /admin/repo/list HTTP/1.1" 200
+2026-01-02 11:05:42,014 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 11:05:42,016 | INFO | sqlalchemy.engine.Engine | SELECT count(*) AS count_1 
+FROM (SELECT issue.id AS id, issue.repo_id AS repo_id, issue.title AS title, issue.body AS body, issue.html_url AS html_url, issue.created_at AS created_at 
+FROM issue ORDER BY issue.id ASC) AS anon_1
+2026-01-02 11:05:42,016 | INFO | sqlalchemy.engine.Engine | [cached since 4574s ago] ()
+2026-01-02 11:05:42,017 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 11:05:42,019 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 11:05:42,019 | INFO | sqlalchemy.engine.Engine | SELECT issue.id, issue.repo_id, issue.title, issue.body, issue.html_url, issue.created_at 
+FROM issue ORDER BY issue.id ASC
+ LIMIT ? OFFSET ?
+2026-01-02 11:05:42,019 | INFO | sqlalchemy.engine.Engine | [cached since 979.2s ago] (10, 0)
+2026-01-02 11:05:42,021 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-02 11:05:42,026 | INFO | uvicorn.access | 127.0.0.1:49320 - "GET /admin/issue/list HTTP/1.1" 200
+2026-01-02 11:48:05,928 | INFO | uvicorn.error | Started server process [17581]
+2026-01-02 11:48:05,928 | INFO | uvicorn.error | Waiting for application startup.
+2026-01-02 11:48:05,931 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-02 11:48:05,932 | INFO | sqlalchemy.engine.Engine | PRAGMA main.table_info("issue")
+2026-01-02 11:48:05,932 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 11:48:05,932 | INFO | sqlalchemy.engine.Engine | PRAGMA main.table_info("repo")
+2026-01-02 11:48:05,932 | INFO | sqlalchemy.engine.Engine | [raw sql] ()
+2026-01-02 11:48:05,932 | INFO | sqlalchemy.engine.Engine | COMMIT
+2026-01-02 11:48:05,932 | INFO | uvicorn.error | Application startup complete.
+2026-01-02 11:48:05,933 | INFO | uvicorn.error | Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2026-01-02 11:48:10,542 | INFO | uvicorn.access | 127.0.0.1:54162 - "GET / HTTP/1.1" 200
+2026-01-02 11:48:11,174 | INFO | uvicorn.access | 127.0.0.1:54162 - "GET /static/styles.css HTTP/1.1" 304
